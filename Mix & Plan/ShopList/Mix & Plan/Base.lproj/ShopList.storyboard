@@ -30,6 +30,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="61.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-Hx-B05">
+                                                    <rect key="frame" x="320" y="15" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="deletebutton"/>
+                                                    <state key="selected" image="deletebutton"/>
+                                                    <connections>
+                                                        <action selector="checkboxAction:" destination="8c6-EH-40P" eventType="touchUpInside" id="9hI-h8-B78"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Beef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R0L-M3-pq6">
                                                     <rect key="frame" x="20" y="11" width="35.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -47,6 +56,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkboxOutlet" destination="eqZ-Hx-B05" id="95Z-e9-mOQ"/>
                                             <outlet property="itemAmountLbl" destination="4oX-vW-wFU" id="Soj-iI-3rJ"/>
                                             <outlet property="itemNameLbl" destination="R0L-M3-pq6" id="BGI-hS-tqF"/>
                                         </connections>
@@ -74,5 +84,8 @@
             <point key="canvasLocation" x="1047.8260869565217" y="1558.9285714285713"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="deletebutton" width="400" height="400"/>
+    </resources>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
