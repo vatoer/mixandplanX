@@ -29,6 +29,7 @@
 		17FEC0EC22DED7D20019778E /* MixandPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EA22DED7D20019778E /* MixandPlan.xcdatamodeld */; };
 		17FEC0EF22DEDB010019778E /* AllMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */; };
 		17FEC0F122DEE9C60019778E /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FEC0F022DEE9C60019778E /* Recipe.storyboard */; };
+		17FEC0F422DEF23D0019778E /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0F322DEF23D0019778E /* RecipeViewController.swift */; };
 		5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		17FEC0EB22DED7D20019778E /* MixandPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MixandPlan.xcdatamodel; sourceTree = "<group>"; };
 		17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenuViewController.swift; sourceTree = "<group>"; };
 		17FEC0F022DEE9C60019778E /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		17FEC0F322DEF23D0019778E /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deletecellprotocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				17FEC0F022DEE9C60019778E /* Recipe.storyboard */,
+				17FEC0F322DEF23D0019778E /* RecipeViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */,
 				17A65DE022DDAC4000A3FD3D /* ShopListTableViewCell.swift in Sources */,
 				17A65DD622DDA5B500A3FD3D /* MixMeViewController.swift in Sources */,
+				17FEC0F422DEF23D0019778E /* RecipeViewController.swift in Sources */,
 				170A692D22DD8D3C007713C7 /* MenuHomeCollectionViewCell.swift in Sources */,
 				17A65DDE22DDAB1600A3FD3D /* ShopListViewController.swift in Sources */,
 				17FEC0EC22DED7D20019778E /* MixandPlan.xcdatamodeld in Sources */,
