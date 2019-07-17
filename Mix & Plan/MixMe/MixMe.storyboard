@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vQy-L4-D0v">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mix Me-->
+        <scene sceneID="FEZ-Wl-eLK">
+            <objects>
+                <viewController id="bk6-R3-QQc" customClass="MixMeViewController" customModule="Mix___Plan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zaI-G4-6Nz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your ingredient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vf-pp-fRl">
+                                <rect key="frame" x="20" y="102" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Ingredients" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-zA-83W">
+                                <rect key="frame" x="0.0" y="130" width="414" height="56"/>
+                                <color key="barTintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bk6-R3-QQc" id="oAq-Q8-hN1"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hfh-9F-Sho">
+                                <rect key="frame" x="20" y="202" width="374" height="619"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="619" id="6hV-7J-Zez"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pOD-W8-CVs">
+                                    <size key="itemSize" width="174" height="176"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientCell" id="Erk-50-lIg" customClass="IngredientsCollectionViewCell" customModule="Mix___Plan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="176"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="satu" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-b0-IiF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="131"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chicken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-LU-dGK">
+                                                    <rect key="frame" x="30" y="141" width="114" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="174" height="176"/>
+                                        <connections>
+                                            <outlet property="dispIngredientImg" destination="UYh-b0-IiF" id="wmp-mh-dYx"/>
+                                            <outlet property="ingredientLbl" destination="F1w-LU-dGK" id="goZ-gI-wYl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YbY-zA-83W" firstAttribute="centerX" secondItem="m1y-6r-miR" secondAttribute="centerX" id="1MD-qf-k0H"/>
+                            <constraint firstItem="m1y-6r-miR" firstAttribute="trailing" secondItem="4Vf-pp-fRl" secondAttribute="trailing" constant="20" id="6tp-kJ-F5V"/>
+                            <constraint firstItem="4Vf-pp-fRl" firstAttribute="leading" secondItem="m1y-6r-miR" secondAttribute="leading" constant="20" id="7DG-bF-9Rr"/>
+                            <constraint firstItem="4Vf-pp-fRl" firstAttribute="centerX" secondItem="m1y-6r-miR" secondAttribute="centerX" id="9OK-JD-M8D"/>
+                            <constraint firstItem="m1y-6r-miR" firstAttribute="trailing" secondItem="Hfh-9F-Sho" secondAttribute="trailing" constant="20" id="Bow-k1-aa2"/>
+                            <constraint firstItem="m1y-6r-miR" firstAttribute="trailing" secondItem="YbY-zA-83W" secondAttribute="trailing" id="JPg-7M-Laz"/>
+                            <constraint firstItem="YbY-zA-83W" firstAttribute="leading" secondItem="m1y-6r-miR" secondAttribute="leading" id="qzo-4c-8c0"/>
+                            <constraint firstItem="Hfh-9F-Sho" firstAttribute="leading" secondItem="m1y-6r-miR" secondAttribute="leading" constant="20" id="rH9-Gi-zkk"/>
+                            <constraint firstItem="Hfh-9F-Sho" firstAttribute="centerX" secondItem="m1y-6r-miR" secondAttribute="centerX" id="ui0-iV-ks2"/>
+                            <constraint firstItem="YbY-zA-83W" firstAttribute="bottom" secondItem="Hfh-9F-Sho" secondAttribute="top" constant="-16" id="wL9-qz-lNU"/>
+                            <constraint firstItem="4Vf-pp-fRl" firstAttribute="top" secondItem="m1y-6r-miR" secondAttribute="top" constant="14" id="wLA-5T-7Ak"/>
+                            <constraint firstItem="YbY-zA-83W" firstAttribute="top" secondItem="m1y-6r-miR" secondAttribute="top" constant="42" id="xE0-eF-lJa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m1y-6r-miR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mix Me" id="AX3-Ta-qiw"/>
+                    <connections>
+                        <outlet property="ingredientsCollView" destination="Hfh-9F-Sho" id="V38-kI-FWj"/>
+                        <outlet property="searchDisplayController" destination="yUg-t2-KU6" id="Zvw-JF-VW8"/>
+                        <outlet property="searchIngredients" destination="YbY-zA-83W" id="bZC-eF-Zgm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZW-jA-sIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="yUg-t2-KU6">
+                    <connections>
+                        <outlet property="delegate" destination="bk6-R3-QQc" id="D0l-by-oG1"/>
+                        <outlet property="searchBar" destination="YbY-zA-83W" id="OKA-hQ-1hq"/>
+                        <outlet property="searchContentsController" destination="bk6-R3-QQc" id="6AG-iH-ZkN"/>
+                        <outlet property="searchResultsDataSource" destination="bk6-R3-QQc" id="Ksi-CJ-BHx"/>
+                        <outlet property="searchResultsDelegate" destination="bk6-R3-QQc" id="m4g-PV-Y4G"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="831.69642857142856"/>
+        </scene>
+        <!--Mix Me-->
+        <scene sceneID="Js1-hw-dQs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vQy-L4-D0v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mix Me" id="3uo-5N-iO3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j3v-z1-QBb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bk6-R3-QQc" kind="relationship" relationship="rootViewController" id="7Ef-Ff-9Km"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEO-GZ-NdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="831.69642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="satu" width="2988" height="2988"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>
