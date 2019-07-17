@@ -10,12 +10,15 @@ import UIKit
 
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,deletecell{
     func deletecellfunc(row: Int) {
-        shopListTableView.beginUpdates()
-        datas.remove(at: row)
-        let indexpath = IndexPath(row: row, section: 0)
-        shopListTableView.deleteRows(at: [indexpath], with: .left)
-        shopListTableView.endUpdates()
-        shopListTableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.shopListTableView.beginUpdates()
+            self.datas.remove(at: row)
+            let indexpath = IndexPath(row: row, section: 0)
+            self.shopListTableView.deleteRows(at: [indexpath], with: .left)
+            self.shopListTableView.endUpdates()
+            self.shopListTableView.reloadData()
+        }
+        
     }
     
     
