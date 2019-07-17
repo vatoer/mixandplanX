@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18D42" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="contributor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="instruction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecipeIngredients" representedClassName="RecipeIngredients" syncable="YES" codeGenerationType="class">
+        <attribute name="ingredientId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecipePlan" representedClassName="RecipePlan" syncable="YES" codeGenerationType="class">
+        <attribute name="days" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="optNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recipeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Recipe" positionX="-45" positionY="0" width="128" height="120"/>
+        <element name="RecipePlan" positionX="-18" positionY="63" width="128" height="105"/>
+        <element name="RecipeIngredients" positionX="9" positionY="99" width="128" height="90"/>
+        <element name="Ingredient" positionX="27" positionY="117" width="128" height="105"/>
+    </elements>
 </model>

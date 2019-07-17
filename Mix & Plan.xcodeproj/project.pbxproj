@@ -26,6 +26,7 @@
 		17A65DE322DDE45900A3FD3D /* MenuPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */; };
 		17A65DE522DDE7C600A3FD3D /* MenuPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */; };
 		17A65DE722DDE8CB00A3FD3D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */; };
+		17A65DE922DECF9A00A3FD3D /* AllMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanViewController.swift; sourceTree = "<group>"; };
 		17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanTableViewCell.swift; sourceTree = "<group>"; };
 		17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				17A65DD422DDA57700A3FD3D /* MixMe */,
 				17A65DDC22DDAACE00A3FD3D /* ShopList */,
 				170A691922D8C94F007713C7 /* Main.storyboard */,
+				17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */,
 				170A691F22D8C952007713C7 /* Assets.xcassets */,
 				170A692122D8C952007713C7 /* LaunchScreen.storyboard */,
 				170A692422D8C952007713C7 /* Info.plist */,
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170A692322D8C952007713C7 /* LaunchScreen.storyboard in Resources */,
+				17A65DE922DECF9A00A3FD3D /* AllMenu.storyboard in Resources */,
 				17A65DD322DDA56B00A3FD3D /* Home.storyboard in Resources */,
 				170A692022D8C952007713C7 /* Assets.xcassets in Resources */,
 				170A691B22D8C94F007713C7 /* Main.storyboard in Resources */,
