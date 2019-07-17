@@ -33,8 +33,8 @@
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-Hx-B05">
                                                     <rect key="frame" x="320" y="15" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="deletebutton"/>
-                                                    <state key="selected" image="deletebutton"/>
+                                                    <state key="normal" title="Button" image="Checklist deselected"/>
+                                                    <state key="selected" image="Checklist Selected"/>
                                                     <connections>
                                                         <action selector="checkboxAction:" destination="8c6-EH-40P" eventType="touchUpInside" id="9hI-h8-B78"/>
                                                     </connections>
@@ -85,7 +85,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="deletebutton" width="400" height="400"/>
+        <image name="Checklist Selected" width="315" height="315"/>
+        <image name="Checklist deselected" width="315" height="315"/>
     </resources>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
