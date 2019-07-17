@@ -235,6 +235,7 @@
                         <outlet property="searchDisplayController" destination="lwI-vf-eRj" id="UzE-dF-VVB"/>
                         <segue destination="xfP-bP-y74" kind="show" identifier="showMenuPlan" id="DuG-HR-HAu"/>
                         <segue destination="FCo-JB-Cjf" kind="show" identifier="showCuisineAllMenu" id="78D-Tx-haa"/>
+                        <segue destination="XO8-dS-UIc" kind="show" identifier="homeShowRecipe" id="PHl-xI-8hs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -361,27 +362,20 @@
                     </view>
                     <connections>
                         <outlet property="menuPlanList" destination="DsW-2T-Rj7" id="c8K-rx-Smi"/>
-                        <segue destination="xpe-Jl-Tb8" kind="show" identifier="showRecipe" id="XXS-lv-qqI"/>
+                        <segue destination="XO8-dS-UIc" kind="show" identifier="planShowRecipe" id="jCj-kr-QpW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-es-3Kf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="303"/>
+            <point key="canvasLocation" x="3040.579710144928" y="302.67857142857139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="74u-3P-Dsc">
+        <!--Recipe-->
+        <scene sceneID="7IC-ZL-tam">
             <objects>
-                <viewController id="xpe-Jl-Tb8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zA9-6o-GXc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="0Gc-fT-egS"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WeD-nR-rhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Recipe" id="XO8-dS-UIc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2f-qS-fMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4007" y="303"/>
+            <point key="canvasLocation" x="2254" y="726"/>
         </scene>
         <!--Home-->
         <scene sceneID="H2Q-PB-25o">
@@ -410,5 +404,8 @@
         <image name="satu" width="2988" height="2988"/>
         <image name="western" width="618" height="166"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jCj-kr-QpW"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

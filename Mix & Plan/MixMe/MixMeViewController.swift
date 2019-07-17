@@ -16,9 +16,8 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     var ingredientName = ["Chicken", "Beef", "Salmon", "Tomato", "Egg", "Carrot", "Broccoli"]
     
     @IBAction func mixMeBtn(_ sender: Any) {
-        
+        performSegue(withIdentifier: "showMixMeMenuResult", sender: self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

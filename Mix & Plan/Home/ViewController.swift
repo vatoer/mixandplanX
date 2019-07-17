@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var CategoryTblView: UITableView!
     
     
+    var row: Int?
     var cuisine = ["pasar", "Western Food", "Indonesian Food", "Japanese Food"]
     var cuisineLogo = ["pasar", "western", "western", "western"]
     
@@ -62,9 +63,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
+        row = indexPath.row
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "homeShowRecipe", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
+        }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCuisineAllMenu"{
+            let dest = segue.destination as! AllMenuViewController
+            dest.navigationItem.title = "\(cuisine[row!])"
+            
+        }
+    }
     
 }
 
