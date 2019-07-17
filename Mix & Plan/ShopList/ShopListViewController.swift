@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,deletecell{
+    func deletecellfunc(row: Int) {
+        shopListTableView.beginUpdates()
+        datas.remove(at: row)
+        let indexpath = IndexPath(row: row, section: 0)
+        shopListTableView.deleteRows(at: [indexpath], with: .left)
+        shopListTableView.endUpdates()
+        shopListTableView.reloadData()
+    }
+    
     
     @IBOutlet weak var shopListTableView: UITableView!
     
@@ -22,13 +31,18 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
+    @IBAction func SelectButtonAction(_ sender: Any) {
+    }
+    @IBOutlet weak var SelectButtonOutlet: UIBarButtonItem!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let shopCell = tableView.dequeueReusableCell(withIdentifier: "shopListCell", for: indexPath) as! ShopListTableViewCell
-        
+        shopCell.delegate = self
+        shopCell.row = indexPath.row
+        shopCell.itemNameLbl.text = datas[indexPath.row]
         
         return shopCell
     }
@@ -36,6 +50,7 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 68
     }
+    var datas:[String] = ["Beef","ikan","ayam","timun","kentang","minyak","bawang"]
     /*
     // MARK: - Navigation
 

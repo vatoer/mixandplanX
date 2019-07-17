@@ -12,7 +12,15 @@ class ShopListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var itemAmountLbl: UILabel!
+    @IBOutlet weak var checkboxOutlet: UIButton!
     
+    var row:Int!
+    var delegate:deletecell!
+    
+    @IBAction func checkboxAction(_ sender: Any) {
+        checkboxOutlet.isSelected = !checkboxOutlet.isSelected
+        delegate.deletecellfunc(row: row)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -25,6 +25,7 @@
 		17A65DE322DDE45900A3FD3D /* MenuPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */; };
 		17A65DE522DDE7C600A3FD3D /* MenuPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */; };
 		17A65DE722DDE8CB00A3FD3D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */; };
+		5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */; };
 		17A65DE922DECF9A00A3FD3D /* AllMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */; };
 		17FEC0EC22DED7D20019778E /* MixandPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EA22DED7D20019778E /* MixandPlan.xcdatamodeld */; };
 		17FEC0EF22DEDB010019778E /* AllMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */; };
@@ -51,6 +52,7 @@
 		17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanViewController.swift; sourceTree = "<group>"; };
 		17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanTableViewCell.swift; sourceTree = "<group>"; };
 		17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deletecellprotocol.swift; sourceTree = "<group>"; };
 		17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllMenu.storyboard; sourceTree = "<group>"; };
 		17FEC0EB22DED7D20019778E /* MixandPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MixandPlan.xcdatamodel; sourceTree = "<group>"; };
 		17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenuViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				17A65DD922DDAAB900A3FD3D /* ShopList.storyboard */,
 				17A65DDD22DDAB1600A3FD3D /* ShopListViewController.swift */,
+				5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */,
 				17A65DDF22DDAC4000A3FD3D /* ShopListTableViewCell.swift */,
 			);
 			path = ShopList;
@@ -236,6 +239,7 @@
 				170A691622D8C94F007713C7 /* AppDelegate.swift in Sources */,
 				17A65DE522DDE7C600A3FD3D /* MenuPlanTableViewCell.swift in Sources */,
 				17A65DE322DDE45900A3FD3D /* MenuPlanViewController.swift in Sources */,
+				5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */,
 				17A65DE022DDAC4000A3FD3D /* ShopListTableViewCell.swift in Sources */,
 				17A65DD622DDA5B500A3FD3D /* MixMeViewController.swift in Sources */,
 				170A692D22DD8D3C007713C7 /* MenuHomeCollectionViewCell.swift in Sources */,
