@@ -12,6 +12,6 @@ class MenuHomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var HomeMenuImg: UIImageView!
     @IBOutlet weak var HomeMenuLbl: UILabel!
-    
+    var category:String=""
     
 }

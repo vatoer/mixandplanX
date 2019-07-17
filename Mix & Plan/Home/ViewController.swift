@@ -12,11 +12,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var homeSearchBar: UISearchBar!
     @IBOutlet weak var CategoryTblView: UITableView!
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+        var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
+        return recognizer
+    }()
     
+    var searchResults: [RecipeModel] = []
+    let queryService = QueryService()
     
     var row: Int?
-    var cuisine = ["pasar", "Western Food", "Indonesian Food", "Japanese Food"]
-    var cuisineLogo = ["pasar", "western", "western", "western"]
+    var cuisine = ["pasar", "Western Food", "Indonesian Food", "Japanese Food", "Western2 Food", "2Indonesian Food", "2Japanese Food","pasar", "Western Food", "Indonesian Food", "Japanese Food", "Western2 Food", "2Indonesian Food", "2Japanese Food"]
+    var cuisineLogo = ["pasar", "western", "western", "western","pasar", "western", "western", "western","pasar", "western", "western", "western","pasar", "western", "western", "western","pasar", "western", "western", "western","pasar", "western", "western", "western"]
     
     @IBAction func menuPlanBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMenuPlan", sender: self)
@@ -24,15 +30,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        loadRecipe()
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
+    }
+    
+    func loadRecipe(){
+        // Do any additional setup after loading the view.
+        queryService.getRecipe(){ results, errorMessage in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let results = results {
+                self.searchResults = results
+                self.CategoryTblView.reloadData()
+                self.CategoryTblView.setContentOffset(CGPoint.zero, animated: false)
+            }
+            if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
+        };
     }
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cuisine.count
+        //return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -44,8 +63,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
+    //load datanya kemari
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var i:Int=0
+        //TODO
+        //asumsu bahwa yg nomor record yang nomor 1 adalah selalu rekomendasi
         if indexPath.row == 0 {
             let recommenCell = tableView.dequeueReusableCell(withIdentifier: "recommendCell") as! RecommendTableViewCell
             recommenCell.recommendImg.image = UIImage(named: "pasar")
@@ -58,6 +81,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: "cuisineCell", for: indexPath) as! CuisineTableViewCell
             cell.cuisineLbl.text = cuisine[indexPath.row]
             cell.cuisineImg.image = UIImage(named: cuisineLogo[indexPath.row])
+            
+            //for every category
+            //print(self.searchResults)
+            cell.recipes = self.searchResults
+            
             return cell
         }
     }
