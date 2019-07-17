@@ -73,6 +73,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7La-qR-oKB">
+                                <rect key="frame" x="78" y="765" width="259" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Mix Me"/>
+                                <connections>
+                                    <action selector="mixMeBtn:" destination="bk6-R3-QQc" eventType="touchUpInside" id="jCQ-Bo-ReI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -96,6 +104,7 @@
                         <outlet property="ingredientsCollView" destination="Hfh-9F-Sho" id="V38-kI-FWj"/>
                         <outlet property="searchDisplayController" destination="yUg-t2-KU6" id="Zvw-JF-VW8"/>
                         <outlet property="searchIngredients" destination="YbY-zA-83W" id="bZC-eF-Zgm"/>
+                        <segue destination="ctz-ac-F6q" kind="show" identifier="showMixMeMenuResult" id="UFE-Nv-IEY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZW-jA-sIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +119,14 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="831.69642857142856"/>
+        </scene>
+        <!--AllMenu-->
+        <scene sceneID="RCh-Gx-pfM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AllMenu" id="ctz-ac-F6q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcx-5H-vRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2639" y="832"/>
         </scene>
         <!--Mix Me-->
         <scene sceneID="Js1-hw-dQs">
