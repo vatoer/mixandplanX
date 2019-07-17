@@ -34,6 +34,10 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
         return allMenuCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "menuShowRecipe", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

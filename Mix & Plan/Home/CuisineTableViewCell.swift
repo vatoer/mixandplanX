@@ -31,6 +31,9 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         return menuCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //performSegue(withIdentifier: "homeShowRecipe", sender: self)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

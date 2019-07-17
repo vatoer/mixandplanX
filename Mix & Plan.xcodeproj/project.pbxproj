@@ -25,10 +25,11 @@
 		17A65DE322DDE45900A3FD3D /* MenuPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */; };
 		17A65DE522DDE7C600A3FD3D /* MenuPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */; };
 		17A65DE722DDE8CB00A3FD3D /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */; };
-		5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */; };
 		17A65DE922DECF9A00A3FD3D /* AllMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */; };
 		17FEC0EC22DED7D20019778E /* MixandPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EA22DED7D20019778E /* MixandPlan.xcdatamodeld */; };
 		17FEC0EF22DEDB010019778E /* AllMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */; };
+		17FEC0F122DEE9C60019778E /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FEC0F022DEE9C60019778E /* Recipe.storyboard */; };
+		5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,10 +53,11 @@
 		17A65DE222DDE45900A3FD3D /* MenuPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanViewController.swift; sourceTree = "<group>"; };
 		17A65DE422DDE7C600A3FD3D /* MenuPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPlanTableViewCell.swift; sourceTree = "<group>"; };
 		17A65DE622DDE8CB00A3FD3D /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deletecellprotocol.swift; sourceTree = "<group>"; };
 		17A65DE822DECF9A00A3FD3D /* AllMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllMenu.storyboard; sourceTree = "<group>"; };
 		17FEC0EB22DED7D20019778E /* MixandPlan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MixandPlan.xcdatamodel; sourceTree = "<group>"; };
 		17FEC0EE22DEDB010019778E /* AllMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenuViewController.swift; sourceTree = "<group>"; };
+		17FEC0F022DEE9C60019778E /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deletecellprotocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,9 @@
 				17A65DCB22DD9D3B00A3FD3D /* Home */,
 				17A65DD422DDA57700A3FD3D /* MixMe */,
 				17A65DDC22DDAACE00A3FD3D /* ShopList */,
-				170A691922D8C94F007713C7 /* Main.storyboard */,
 				17FEC0ED22DEDADE0019778E /* AllMenu */,
+				17FEC0F222DEE9D00019778E /* Recipe */,
+				170A691922D8C94F007713C7 /* Main.storyboard */,
 				170A691F22D8C952007713C7 /* Assets.xcassets */,
 				170A692122D8C952007713C7 /* LaunchScreen.storyboard */,
 				17FEC0EA22DED7D20019778E /* MixandPlan.xcdatamodeld */,
@@ -155,6 +158,14 @@
 			path = AllMenu;
 			sourceTree = "<group>";
 		};
+		17FEC0F222DEE9D00019778E /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				17FEC0F022DEE9C60019778E /* Recipe.storyboard */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FEC0F122DEE9C60019778E /* Recipe.storyboard in Resources */,
 				170A692322D8C952007713C7 /* LaunchScreen.storyboard in Resources */,
 				17A65DE922DECF9A00A3FD3D /* AllMenu.storyboard in Resources */,
 				17A65DD322DDA56B00A3FD3D /* Home.storyboard in Resources */,

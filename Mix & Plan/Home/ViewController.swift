@@ -64,7 +64,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         row = indexPath.row
-        performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "homeShowRecipe", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
+        }
     }
     
     

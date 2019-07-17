@@ -41,6 +41,7 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       // performSegue(withIdentifier: "planShowRecipe", sender: self)
         
     }
     

@@ -67,11 +67,20 @@
                     <navigationItem key="navigationItem" title="Menu" id="Go9-AS-4pL"/>
                     <connections>
                         <outlet property="allMenuCollView" destination="dHq-aN-oM7" id="DRf-Q8-2z6"/>
+                        <segue destination="XCL-PS-9vX" kind="show" identifier="menuShowRecipe" id="5HR-Zi-jNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaT-aU-oCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115.94202898550725" y="-401.11607142857139"/>
+        </scene>
+        <!--Recipe-->
+        <scene sceneID="7Rj-3p-v04">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Recipe" id="XCL-PS-9vX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfB-QC-oHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-401"/>
         </scene>
     </scenes>
     <resources>

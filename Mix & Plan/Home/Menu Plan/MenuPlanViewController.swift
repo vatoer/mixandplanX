@@ -16,6 +16,12 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let replanBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action:
+//            #selector(replanMenu))
+        let replanBtn = UIBarButtonItem(title: "Re-plan", style: .plain, target: self, action: #selector(replanMenu))
+        
+        self.navigationItem.rightBarButtonItem = replanBtn
+        
         menuPlanList.delegate = self
         menuPlanList.dataSource = self
 
@@ -39,6 +45,11 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
         return 200
     }
     
+    
+    @objc func replanMenu(){
+        print("hello")
+        //hapus semua collection view cell nya
+    }
 
     /*
     // MARK: - Navigation
