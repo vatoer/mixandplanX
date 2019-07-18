@@ -10,6 +10,7 @@ import UIKit
 
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,deletecell{
     func deletecellfunc(row: Int, status:Bool) {
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 //            self.shopListTableView.beginUpdates()
             if status {
@@ -100,5 +101,9 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func awakeFromNib() {
+        
+    }
 
 }
