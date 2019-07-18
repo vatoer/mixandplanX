@@ -13,6 +13,7 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     @IBOutlet weak var cuisineImg: UIImageView!
     @IBOutlet weak var cuisineLbl: UILabel!
     @IBOutlet weak var dispMenuList: UICollectionView!
+    
     var recipes:[RecipeModel]=[]
     var searchResults: [RecipeModel] = []
     let queryService = QueryService()

@@ -10,8 +10,14 @@ import UIKit
 
 class MenuHomeCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var bgCellView: UIView!
     @IBOutlet weak var HomeMenuImg: UIImageView!
     @IBOutlet weak var HomeMenuLbl: UILabel!
+    @IBAction func addMenuPlan(_ sender: Any) {
+        
+    }
+    
     var category:String=""
+    
     
 }
