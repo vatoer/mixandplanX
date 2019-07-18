@@ -8,5 +8,5 @@
 
 import Foundation
 protocol deletecell {
-    func deletecellfunc(row:Int)  
+    func deletecellfunc(row:Int, status:Bool)  
 }

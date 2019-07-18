@@ -9,13 +9,20 @@
 import UIKit
 
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,deletecell{
-    func deletecellfunc(row: Int) {
+    func deletecellfunc(row: Int, status:Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.shopListTableView.beginUpdates()
-            self.datas.remove(at: row)
-            let indexpath = IndexPath(row: row, section: 0)
-            self.shopListTableView.deleteRows(at: [indexpath], with: .left)
-            self.shopListTableView.endUpdates()
+//            self.shopListTableView.beginUpdates()
+            if status {
+                self.alreadybought.append(self.datas[row])
+                self.datas.remove(at: row)
+            }else{
+                self.datas.append(self.alreadybought[row])
+                self.alreadybought.remove(at: row)
+            }
+            
+//            let indexpath = IndexPath(row: row, section: 0)
+//            self.shopListTableView.deleteRows(at: [indexpath], with: .left)
+//            self.shopListTableView.endUpdates()
             self.shopListTableView.reloadData()
         }
         
@@ -37,6 +44,16 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func SelectButtonAction(_ sender: Any) {
     }
     @IBOutlet weak var SelectButtonOutlet: UIBarButtonItem!
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0
+        {
+            return "To Buy"
+            
+        }else{
+            return "Bought"
+        }
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -55,10 +72,14 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         let shopCell = tableView.dequeueReusableCell(withIdentifier: "shopListCell", for: indexPath) as! ShopListTableViewCell
         shopCell.delegate = self
         shopCell.row = indexPath.row
+        
+        
         if indexPath.section == 0 {
             shopCell.itemNameLbl.text = datas[indexPath.row]
+            shopCell.checkboxOutlet.isSelected = false
         }else{
             shopCell.itemNameLbl.text = alreadybought[indexPath.row]
+            shopCell.checkboxOutlet.isSelected = true
         }
         
         
