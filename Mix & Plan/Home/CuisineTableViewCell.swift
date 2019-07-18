@@ -8,76 +8,104 @@
 
 import UIKit
 
-class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+//https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
+//protocol ini akan digunakan sebagai penghubung CuisineTableViewCell dengan ViewController parentnya
+protocol CuisineTableViewCellClick {
+    func itemClick(index: Int)
+    func recipeClick(recipe: RecipeModel)
+}
+
+class CuisineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cuisineImg: UIImageView!
     @IBOutlet weak var cuisineLbl: UILabel!
     @IBOutlet weak var dispMenuList: UICollectionView!
     
-    var recipes:[RecipeModel]=[]
+    let vc = ViewController()
+    
+    //define cellProtocol
+    //akan dipanggil ketika didselect
+    var cellProtocol: CuisineTableViewCellClick?
+    
+    var category:String = "not available"
+    
+    var row: Int = 0
     var searchResults: [RecipeModel] = []
     let queryService = QueryService()
-    
+    var i: Int = 0
     //bagaimana akses menuNames ini dari veiw
     let menuNames = ["Lasagna", "Pasta", "Fish and Chips"]
-    let images = ["satu", "satu", "satu", "satu"]
+    var recipes: [String] = []
+    let images = ["satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu"]
     
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuNames.count
-    }
-    
-    //TODO
-    //harusnya ke sini hasil resepnya
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let menuCell = collectionView
-            .dequeueReusableCell(withReuseIdentifier: "menuCuisineCell", for: indexPath) as! MenuHomeCollectionViewCell
-        menuCell.HomeMenuImg.image = UIImage(named: images[indexPath.row])
-        menuCell.HomeMenuLbl.text = menuNames[indexPath.row]
-        
-        //TODO pisahkan perkategori
-        //menuCell.HomeMenuLbl.text = searchResults[0].name
-        
-        print("searchResults====")
-        for xresult in searchResults {
-            print(xresult.id)
-        }
-        print(searchResults.count)
-        print("====searchResults")
-        
-        return menuCell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "homeShowRecipe", sender: self)
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         loadRecipe()
+        //print("ini row",self.searchResults)
         dispMenuList.delegate = self
         dispMenuList.dataSource = self
     }
+    
+    
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+extension CuisineTableViewCell:UICollectionViewDataSource, UICollectionViewDelegate,
+UIViewControllerTransitioningDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return searchResults.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        row = indexPath.row
+        
+        let menuCell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: "menuCuisineCell", for: indexPath) as! MenuHomeCollectionViewCell
+        //menuCell.HomeMenuImg.image = UIImage(named: images[indexPath.row])
+        let url = searchResults[indexPath.row].imageURL
+        menuCell.HomeMenuImg.load(url: url)
+        menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
+        
+        //TODO pisahkan perkategori
+        return menuCell
+    }
+    
+    //fungsi ini dipanggil ketika cell di pilih
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print("#collectionView")
+        //
+        //cellProtocol?.itemClick(index: indexPath.row)
+        cellProtocol?.recipeClick(recipe: searchResults[indexPath.row])
+        
+        //print(searchResults[0].name)
     }
     
     func loadRecipe(){
+        print(#function)
         // Do any additional setup after loading the view.
-        queryService.getRecipe(){ results, errorMessage in
+        queryService.getRecipe(searchTerm: "all"){ results, errorMessage in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let results = results {
                 self.searchResults = results
                 self.dispMenuList.reloadData()
-//                self.CategoryTblView.setContentOffset(CGPoint.zero, animated: false)
             }
             if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
         };
+        
+        //print(searchResults)
     }
-    
-    
-    
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

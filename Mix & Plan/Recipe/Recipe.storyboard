@@ -148,6 +148,8 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="recipeImageView" destination="ITo-ag-c1L" id="TCW-si-fjx"/>
+                        <outlet property="recipeNameLabel" destination="3Hr-3Q-IFw" id="3Rh-k9-5OW"/>
                         <segue destination="Gdc-wM-7sa" kind="show" identifier="showStartCooking" id="MR3-mB-XvU"/>
                     </connections>
                 </viewController>

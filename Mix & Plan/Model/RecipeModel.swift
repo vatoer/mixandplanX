@@ -14,16 +14,17 @@ class RecipeModel {
     let name: String
     let contributor: String
     let imageURL: URL
-    var downloaded = false
+    let tag:String
     let instruction:[String]
     var ingredient:[IngredientModel] = []
     
-    init(id:String, name: String, contributor: String, imageURL: URL,
+    init(id:String, name: String, contributor: String, imageURL: URL, tag: String,
          instruction:[String]) {
         self.id = id
         self.name = name
         self.contributor = contributor
         self.imageURL = imageURL
+        self.tag = tag
         self.instruction = instruction
     }
     

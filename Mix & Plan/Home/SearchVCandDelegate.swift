@@ -17,7 +17,7 @@ extension ViewController: UISearchBarDelegate {
         dismissKeyboard()
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        queryService.getSearchResults(searchTerm: searchText) { results, errorMessage in
+        queryService.getRecipe(searchTerm: searchText) { results, errorMessage in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let results = results {
                 self.searchResults = results

@@ -160,7 +160,6 @@
                                                                     <connections>
                                                                         <outlet property="HomeMenuImg" destination="0Gm-gt-XBX" id="leq-sv-iYX"/>
                                                                         <outlet property="HomeMenuLbl" destination="gn1-2f-Lmo" id="XTg-tK-XkC"/>
-                                                                        <segue destination="XO8-dS-UIc" kind="show" id="MBg-Fq-wY3"/>
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>
@@ -239,7 +238,7 @@
                         <outlet property="searchDisplayController" destination="lwI-vf-eRj" id="UzE-dF-VVB"/>
                         <segue destination="xfP-bP-y74" kind="show" identifier="showMenuPlan" id="DuG-HR-HAu"/>
                         <segue destination="FCo-JB-Cjf" kind="show" identifier="showCuisineAllMenu" id="78D-Tx-haa"/>
-                        <segue destination="XO8-dS-UIc" kind="show" identifier="homeShowRecipe" id="PHl-xI-8hs"/>
+                        <segue destination="XO8-dS-UIc" kind="show" identifier="showRecipeFromHome" id="agI-yS-tFn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -412,7 +411,7 @@
         <image name="western" width="618" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MBg-Fq-wY3"/>
+        <segue reference="agI-yS-tFn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
