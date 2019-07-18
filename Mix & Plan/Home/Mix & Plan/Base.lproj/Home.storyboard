@@ -325,6 +325,7 @@
                                                             <connections>
                                                                 <outlet property="menuImg" destination="Ou7-Ed-Zto" id="yi7-BZ-ZeZ"/>
                                                                 <outlet property="menuLbl" destination="2b9-Jy-z8C" id="OcD-4G-owJ"/>
+                                                                <segue destination="XO8-dS-UIc" kind="show" id="bPx-rf-PJy"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -406,7 +407,7 @@
         <image name="western" width="618" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PHl-xI-8hs"/>
+        <segue reference="jCj-kr-QpW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
