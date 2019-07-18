@@ -79,5 +79,5 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     }
     
     
-
+    
 }

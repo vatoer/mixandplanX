@@ -24,6 +24,9 @@ class ShopListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.contentView.layer.cornerRadius = 5.0
+        self.contentView.layer.borderWidth = 2.5
+        self.contentView.layer.borderColor = UIColor(red: 255/255.0, green: 129/255.0, blue: 38/255.0, alpha: 100.0).cgColor
         
     }
 

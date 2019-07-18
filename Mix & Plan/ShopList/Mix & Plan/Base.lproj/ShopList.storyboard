@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-Aw-PfL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-Aw-PfL">
                                 <rect key="frame" x="20" y="111" width="374" height="702"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8c6-EH-40P" id="NJ8-zh-Jkh">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-Hx-B05">
@@ -85,8 +85,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Checklist Selected" width="315" height="315"/>
-        <image name="Checklist deselected" width="315" height="315"/>
+        <image name="Checklist Selected" width="29" height="29"/>
+        <image name="Checklist deselected" width="29" height="29"/>
     </resources>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

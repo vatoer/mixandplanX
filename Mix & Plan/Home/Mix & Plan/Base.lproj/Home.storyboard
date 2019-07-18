@@ -56,9 +56,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasar" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-eU-Rj2">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-eU-Rj2" customClass="CustomDisplayImage" customModule="Mix___Plan" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="46" width="372" height="189"/>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="189" id="0d1-cf-j08"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="147" id="HEu-YB-qE1"/>
@@ -105,10 +105,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nEm-gL-3gH">
-                                                            <rect key="frame" x="0.0" y="92" width="372" height="209"/>
+                                                            <rect key="frame" x="0.0" y="98" width="372" height="203"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="209" id="2vj-W7-9Rp"/>
+                                                                <constraint firstAttribute="height" constant="203" id="2vj-W7-9Rp"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fnq-Vq-7DD">
                                                                 <size key="itemSize" width="186" height="185"/>
@@ -118,17 +118,12 @@
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="menuCuisineCell" id="cN1-lF-o75" customClass="MenuHomeCollectionViewCell" customModule="Mix___Plan" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="12" width="186" height="185"/>
+                                                                    <rect key="frame" x="0.0" y="9" width="186" height="185"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="185"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-LC-fsg">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="186" height="185"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            </view>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kristen-kaethler-7Pg0qug_D9s-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-gt-XBX">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="130"/>
                                                                                 <constraints>
@@ -158,14 +153,13 @@
                                                                         <constraint firstItem="gn1-2f-Lmo" firstAttribute="leading" secondItem="cN1-lF-o75" secondAttribute="leadingMargin" constant="5" id="9q6-5A-qqU"/>
                                                                         <constraint firstItem="0Gm-gt-XBX" firstAttribute="top" secondItem="cN1-lF-o75" secondAttribute="top" id="YxM-2h-w6t"/>
                                                                         <constraint firstAttribute="bottom" secondItem="cXU-jB-kdg" secondAttribute="bottom" constant="20" id="bOt-O7-vN6"/>
-                                                                        <constraint firstItem="gn1-2f-Lmo" firstAttribute="trailing" secondItem="cXU-jB-kdg" secondAttribute="trailing" id="hGE-3S-X9p"/>
+                                                                        <constraint firstItem="gn1-2f-Lmo" firstAttribute="trailing" secondItem="cXU-jB-kdg" secondAttribute="trailing" constant="-36" id="hGE-3S-X9p"/>
                                                                         <constraint firstAttribute="bottomMargin" secondItem="gn1-2f-Lmo" secondAttribute="bottom" constant="4" id="ooN-fF-yht"/>
                                                                         <constraint firstItem="0Gm-gt-XBX" firstAttribute="leading" secondItem="cN1-lF-o75" secondAttribute="leading" id="um4-Kk-RAI"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="HomeMenuImg" destination="0Gm-gt-XBX" id="leq-sv-iYX"/>
                                                                         <outlet property="HomeMenuLbl" destination="gn1-2f-Lmo" id="XTg-tK-XkC"/>
-                                                                        <outlet property="bgCellView" destination="Khh-LC-fsg" id="lfT-EG-Pxt"/>
                                                                         <segue destination="XO8-dS-UIc" kind="show" id="MBg-Fq-wY3"/>
                                                                     </connections>
                                                                 </collectionViewCell>
@@ -198,7 +192,7 @@
                                                         <constraint firstItem="nEm-gL-3gH" firstAttribute="centerX" secondItem="bR9-K2-y4n" secondAttribute="centerX" id="c2F-di-O50"/>
                                                         <constraint firstItem="9uw-dV-efV" firstAttribute="centerX" secondItem="ZWm-L4-q6d" secondAttribute="centerX" id="h5x-9V-AEm"/>
                                                         <constraint firstItem="9uw-dV-efV" firstAttribute="leading" secondItem="bR9-K2-y4n" secondAttribute="leadingMargin" constant="90" id="kcO-V5-9Ii"/>
-                                                        <constraint firstItem="nEm-gL-3gH" firstAttribute="top" secondItem="ZWm-L4-q6d" secondAttribute="bottom" constant="2" id="yFt-Fg-s0o"/>
+                                                        <constraint firstItem="nEm-gL-3gH" firstAttribute="top" secondItem="ZWm-L4-q6d" secondAttribute="bottom" constant="8" id="yFt-Fg-s0o"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -409,8 +403,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chef" width="4988" height="2897"/>
         <image name="kristen-kaethler-7Pg0qug_D9s-unsplash" width="2988" height="2988"/>
-        <image name="pasar" width="2100" height="1400"/>
         <image name="plan" width="27" height="28"/>
         <image name="plus" width="15.5" height="15.5"/>
         <image name="satu" width="2988" height="2988"/>
