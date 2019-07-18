@@ -386,7 +386,7 @@
         <scene sceneID="H2Q-PB-25o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YVD-dG-wTQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="pGl-K8-4Zk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="pGl-K8-4Zk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XpA-Tp-26o">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -404,6 +404,7 @@
     </scenes>
     <resources>
         <image name="chef" width="4988" height="2897"/>
+        <image name="home" width="29" height="24"/>
         <image name="kristen-kaethler-7Pg0qug_D9s-unsplash" width="2988" height="2988"/>
         <image name="plan" width="27" height="28"/>
         <image name="plus" width="15.5" height="15.5"/>

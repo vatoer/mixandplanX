@@ -31,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRecipe()
+        setUpNavigationBarItem()
+        
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
     }
@@ -47,7 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
         };
     }
-
+    
+    func setUpNavigationBarItem(){
+        let logo = UIImage(named: "logo-icon")
+        let navImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = navImageView
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cuisine.count

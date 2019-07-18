@@ -22,6 +22,8 @@
                                 <rect key="frame" x="20" y="111" width="374" height="702"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shopListCell" textLabel="R0L-M3-pq6" detailTextLabel="4oX-vW-wFU" rowHeight="62" style="IBUITableViewCellStyleSubtitle" id="8c6-EH-40P" customClass="ShopListTableViewCell" customModule="Mix___Plan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="374" height="62"/>
@@ -96,7 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="A3w-Ia-sBj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shop List" id="MXa-6e-4jh"/>
+                    <tabBarItem key="tabBarItem" title="Shop List" image="shop" id="MXa-6e-4jh"/>
                     <connections>
                         <outlet property="shopListTableView" destination="aBa-Aw-PfL" id="08O-3z-SLE"/>
                     </connections>
@@ -109,6 +111,7 @@
     <resources>
         <image name="Checklist Selected" width="29" height="29"/>
         <image name="Checklist deselected" width="29" height="29"/>
+        <image name="shop" width="27" height="22"/>
     </resources>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
