@@ -13,7 +13,11 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     @IBOutlet weak var cuisineImg: UIImageView!
     @IBOutlet weak var cuisineLbl: UILabel!
     @IBOutlet weak var dispMenuList: UICollectionView!
+    var recipes:[RecipeModel]=[]
+    var searchResults: [RecipeModel] = []
+    let queryService = QueryService()
     
+    //bagaimana akses menuNames ini dari veiw
     let menuNames = ["Lasagna", "Pasta", "Fish and Chips"]
     let images = ["satu", "satu", "satu", "satu"]
     
@@ -22,11 +26,23 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         return menuNames.count
     }
     
+    //TODO
+    //harusnya ke sini hasil resepnya
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let menuCell = collectionView
             .dequeueReusableCell(withReuseIdentifier: "menuCuisineCell", for: indexPath) as! MenuHomeCollectionViewCell
         menuCell.HomeMenuImg.image = UIImage(named: images[indexPath.row])
         menuCell.HomeMenuLbl.text = menuNames[indexPath.row]
+        
+        //TODO pisahkan perkategori
+        //menuCell.HomeMenuLbl.text = searchResults[0].name
+        
+        print("searchResults====")
+        for xresult in searchResults {
+            print(xresult.id)
+        }
+        print(searchResults.count)
+        print("====searchResults")
         
         return menuCell
     }
@@ -37,7 +53,7 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        loadRecipe()
         dispMenuList.delegate = self
         dispMenuList.dataSource = self
     }
@@ -47,5 +63,20 @@ class CuisineTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
 
         // Configure the view for the selected state
     }
+    
+    func loadRecipe(){
+        // Do any additional setup after loading the view.
+        queryService.getRecipe(){ results, errorMessage in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let results = results {
+                self.searchResults = results
+                self.dispMenuList.reloadData()
+//                self.CategoryTblView.setContentOffset(CGPoint.zero, animated: false)
+            }
+            if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
+        };
+    }
+    
+    
 
 }
