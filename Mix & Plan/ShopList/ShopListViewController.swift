@@ -37,15 +37,30 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func SelectButtonAction(_ sender: Any) {
     }
     @IBOutlet weak var SelectButtonOutlet: UIBarButtonItem!
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
+        if section == 0
+        {
+            return datas.count
+            
+        }else{
+            return alreadybought.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let shopCell = tableView.dequeueReusableCell(withIdentifier: "shopListCell", for: indexPath) as! ShopListTableViewCell
         shopCell.delegate = self
         shopCell.row = indexPath.row
-        shopCell.itemNameLbl.text = datas[indexPath.row]
+        if indexPath.section == 0 {
+            shopCell.itemNameLbl.text = datas[indexPath.row]
+        }else{
+            shopCell.itemNameLbl.text = alreadybought[indexPath.row]
+        }
+        
         
         return shopCell
     }
@@ -53,6 +68,7 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 68
     }
+    var alreadybought:[String] = []
     var datas:[String] = ["Beef","ikan","ayam","timun","kentang","minyak","bawang"]
     /*
     // MARK: - Navigation
