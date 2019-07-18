@@ -19,7 +19,7 @@ class ShopListTableViewCell: UITableViewCell {
     
     @IBAction func checkboxAction(_ sender: Any) {
         checkboxOutlet.isSelected = !checkboxOutlet.isSelected
-        delegate.deletecellfunc(row: row)
+//        delegate.deletecellfunc(row: row)
     }
     override func awakeFromNib() {
         super.awakeFromNib()
