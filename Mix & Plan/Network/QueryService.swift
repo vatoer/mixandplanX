@@ -17,6 +17,8 @@ class QueryService {
     var ingredients: [IngredientModel] = []
     var errorMessage = ""
     
+        let cuisine = ["Recomendation":"md7T8Bgb", "Indonesian":"WPEgKA3e", "Western":"aE9Vskqz", "Jepang":"rmHLjUcF","Chinese":"Fr1dHK9q","Thai":"4F60xEyE"]
+    
     // TODO
     // 1
     let defaultSession = URLSession(configuration: .default)
@@ -29,12 +31,36 @@ class QueryService {
     //func getRecipe(completion: @escaping QueryResult)  {
     func getRecipe(searchTerm: String, completion: @escaping QueryResult)  {
         //0
+        var code: String = "WPEgKA3e"
+        switch searchTerm {
+        case "Indonesian":
+             code = "WPEgKA3e"
+        case "Western":
+            code = "aE9Vskqz"
+        case "Jepang":
+            code = "rmHLjUcF"
+        case "Chinese":
+            code = "Fr1dHK9q"
+        case "Thai":
+            code = "4F60xEyE"
+        default:
+             code = "RrbWadFU"
+        }
+        
+        print(searchTerm)
+        
+        //
+        
+        
+        let pasteBinUrl = "https://pastebin.com/raw/\(code)"
+        print("pasteBinUrl",pasteBinUrl)
+        
         //print("getRecipe")
         // 1
         dataTask?.cancel()
         //2
         //string url data https://itunes.apple.com/search
-        if var urlComponents = URLComponents(string: "https://pastebin.com/raw/RrbWadFU") {
+        if var urlComponents = URLComponents(string: pasteBinUrl ) {
             urlComponents.query = "tag=\(searchTerm)&entity=song&term=tes"
             // 3
             guard let url = urlComponents.url else { return }
@@ -97,7 +123,6 @@ class QueryService {
                 errorMessage += "Problem parsing recipeDictionary\n"
             }
         }
-        
     }
     
     

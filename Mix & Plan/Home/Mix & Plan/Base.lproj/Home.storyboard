@@ -139,9 +139,6 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXU-jB-kdg">
                                                                                 <rect key="frame" x="159" y="143" width="28" height="22"/>
                                                                                 <state key="normal" title="+" image="plus"/>
-                                                                                <connections>
-                                                                                    <action selector="addMenuPlan:" destination="cN1-lF-o75" eventType="touchUpInside" id="zUo-3p-ald"/>
-                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </view>

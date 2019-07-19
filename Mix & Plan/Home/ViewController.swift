@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var homeSearchBar: UISearchBar!
@@ -18,13 +19,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return recognizer
     }()
     
+    
+    
     var searchResults: [RecipeModel] = []
+    var recomendedRecipe: RecipeModel?
     let queryService = QueryService()
     
     //let cuisineCell = CuisineTableViewCell.self
     
-    var row: Int?, rows: Int?
-    var cuisine = ["Recomendation", "Indonesia", "Western", "Jepang","Chinese","Thai"]
+    var row: Int?
+    var cuisine = ["Recomendation", "Indonesian", "Western", "Jepang","Chinese","Thai"]
     //TODO
     //bikin logo
     var cuisineLogo = ["pasar", "western", "western", "western","western", "western"]
@@ -37,28 +41,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //belum di kategoriin sesuai cuisine
-        
+        loadRecipeRecomendation()
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
         
     }
     
-    func loadRecipe(){
+    func loadRecipeRecomendation(){
         print(#function)
         // Do any additional setup after loading the view.
-        queryService.getRecipe(searchTerm: "all"){ results, errorMessage in
+        queryService.getRecipe(searchTerm: "Recomendation"){ results, errorMessage in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let results = results {
                 //print(#function)
                 //print(results)
                 self.searchResults = results
+                self.recomendedRecipe = results[0]
+                self.CategoryTblView.reloadData()
                 
             }
             if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
         };
-        
-        //load indonesian food only
         
         //print(searchResults)
     }
@@ -80,13 +83,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //load datanya kemari
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        rows = indexPath.row
+        //var i:Int=0
         //TODO
         //asumsu bahwa yg nomor record yang nomor 1 adalah selalu rekomendasi
         if indexPath.row == 0 {
             let recommenCell = tableView.dequeueReusableCell(withIdentifier: "recommendCell") as! RecommendTableViewCell
-            recommenCell.recommendImg.image = UIImage(named: "chef")
-            recommenCell.recommendLbl.text = "Fried Rice with chicken"
+            
+            //recommenCell.recommendImg.image = UIImage(named: "pasar")
+            //recommenCell.recommendLbl.text = "Fried Rice with chicken"
+            
+            if let recomendedRecipe = self.recomendedRecipe {
+                recommenCell.recommendImg.load(url: recomendedRecipe.imageURL)
+                recommenCell.recommendLbl.text = recomendedRecipe.name
+            }
+            
+            
+            
             
             return recommenCell
             
@@ -99,24 +111,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.cuisineImg.image = UIImage(named: cuisineLogo[indexPath.row])
             cell.category = cuisine[indexPath.row]
             cell.cellProtocol = self
-            
-            cell.searchResults = searchResults
-            //            print("START searchResults disini")
-            //            print(self.searchResults)
-            //            print("END searchResults disini")
-            //            cell.searchResults = self.searchResults
-            //            cell.dispMenuList.reloadData()
-            //for every category
-            //print(self.searchResults)
-            //cell.searchResults = self.searchResults
+            cell.loadRecipe()
             
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        row = indexPath.row
         if indexPath.row == 0 {
-            performSegue(withIdentifier: "homeShowRecipe", sender: self)
+            performSegue(withIdentifier: "showRecipeFromHome", sender: self.recomendedRecipe)
         }
         else {
             performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
@@ -145,6 +149,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 extension ViewController: CuisineTableViewCellClick {
+    
     func recipeClick(recipe: RecipeModel) {
         performSegue(withIdentifier: "showRecipeFromHome", sender: recipe)
         //print("#recipeClick")
@@ -154,6 +159,7 @@ extension ViewController: CuisineTableViewCellClick {
     func itemClick(index: Int) {
         //performSegue(withIdentifier: "showRecipeFromHome", sender: index)
     }
+    
     
 }
 

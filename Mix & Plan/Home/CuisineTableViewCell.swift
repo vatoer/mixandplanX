@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 //https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
 //protocol ini akan digunakan sebagai penghubung CuisineTableViewCell dengan ViewController parentnya
@@ -23,7 +22,8 @@ class CuisineTableViewCell: UITableViewCell {
     @IBOutlet weak var dispMenuList: UICollectionView!
     
     let vc = ViewController()
-    let collView = MenuHomeCollectionViewCell()
+    
+
     
     //define cellProtocol
     //akan dipanggil ketika didselect
@@ -33,11 +33,12 @@ class CuisineTableViewCell: UITableViewCell {
     
     var row: Int = 0
     var searchResults: [RecipeModel] = []
-   // let queryService = QueryService()
+    let queryService = QueryService()
     var i: Int = 0
-    var y: Int = 0
-    
+    //bagaimana akses menuNames ini dari veiw
+    let menuNames = ["Lasagna", "Pasta", "Fish and Chips"]
     var recipes: [String] = []
+    let images = ["satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,22 +54,10 @@ class CuisineTableViewCell: UITableViewCell {
 
 extension CuisineTableViewCell:UICollectionViewDataSource, UICollectionViewDelegate,
 UIViewControllerTransitioningDelegate{
-    
-//    @objc func addMenuToPlan(sender: UIButton){
-//        if i < 7 {
-//            if y < 5 {
-//                collView.addMenu()
-//                print("y")
-//                (y+1)
-//            }
-//            (i+1)
-//        }
-//    }
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchResults.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         row = indexPath.row
@@ -76,23 +65,19 @@ UIViewControllerTransitioningDelegate{
         let menuCell = collectionView
             .dequeueReusableCell(withReuseIdentifier: "menuCuisineCell", for: indexPath) as! MenuHomeCollectionViewCell
         //menuCell.HomeMenuImg.image = UIImage(named: images[indexPath.row])
-//        let url = searchResults[indexPath.row].imageURL
-//        menuCell.HomeMenuImg.load(url: url)
-//        menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
-        //menuCell.addMenuPBtn.addTarget(self, action: #selector(addMenuToPlan(sender:)), for: .touchUpInside)
+        let url = searchResults[indexPath.row].imageURL
+        menuCell.HomeMenuImg.load(url: url)
+        menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
         
-        if searchResults[indexPath.row].tag == category {
-            let url = searchResults[indexPath.row].imageURL
-            menuCell.HomeMenuImg.load(url: url)
-            menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
-            
-        }
-        else {
-            print("bukan disini")
-        }
+        menuCell.addMenuPBtn.tag = indexPath.row
+        menuCell.addMenuPBtn.addTarget(self, action: #selector(self.addButton), for: .touchUpInside)
         
         //TODO pisahkan perkategori
         return menuCell
+    }
+    
+    @objc func addButton(sender: UIButton){
+        print(sender.tag)
     }
     
     //fungsi ini dipanggil ketika cell di pilih
@@ -105,23 +90,24 @@ UIViewControllerTransitioningDelegate{
         //print(searchResults[0].name)
     }
     
-//    func loadRecipe(tag: String){
-//        print(#function)
-//        // Do any additional setup after loading the view.
-//        queryService.getRecipe(searchTerm: tag){ results, errorMessage in
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//            if let results = results {
-//                self.searchResults = results
-//                self.dispMenuList.reloadData()
-//            }
-//            if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
-//        };
-//
-//        //print(searchResults)
-//    }
-    
-
+    func loadRecipe(){
+        print(#function)
+        print(category)
+        
+        //cellProtocol?.setCategory(category: <#T##String#>)
+        // Do any additional setup after loading the view.
+        queryService.getRecipe(searchTerm: category ){ results, errorMessage in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let results = results {
+                self.searchResults = results
+                self.dispMenuList.reloadData()
+            }
+            if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
+        };
+        
+        //print(searchResults)
     }
+}
 
 extension UIImageView {
     func load(url: URL) {
