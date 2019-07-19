@@ -12,7 +12,7 @@ import CoreData
 class MenuHomeCollectionViewCell: UICollectionViewCell {
     
 
-    var recipeP : [RecipePlan]?
+    var recipe: RecipeModel!
      var i = 0
      var y = 0
     
@@ -40,15 +40,29 @@ class MenuHomeCollectionViewCell: UICollectionViewCell {
     }
     
 //    func addMenu(){
-//        
+//
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //        let context = appDelegate.persistentContainer.viewContext
-//        
-//        let entity = NSEntityDescription.entity(forEntityName: "RecipePlan", in: context)
-//        let manageObj = NSManagedObject(entity: entity!, insertInto: context)
-//        
-//        manageObj.setValue(HomeMenuLbl.text, forKey: "name")
-//        manageObj.setValue(i, forKey: "days")
-//        manageObj.setValue(y, forKey: "optNumber")
+//
+////        let entity = NSEntityDescription.entity(forEntityName: "RecipePlan", in: context)
+////        let manageObj = NSManagedObject(entity: entity!, insertInto: context)
+////
+////        manageObj.setValue(HomeMenuLbl.text, forKey: "name")
+////        manageObj.setValue(i, forKey: "days")
+////        manageObj.setValue(y, forKey: "optNumber")
+//
+////            var re = Recipe(context: context)
+////        re.name = recipe.name
+////        re.id = recipe.id
+////        re.imageURL = recipe.imageURL.absoluteString
+//////        re.instruction = recipe.instruction
+////        re.contributor = recipe.contributor
+//
+//        do{
+//            try context.save()
+//        }catch{
+//
+//        }
 //    }
+
 }

@@ -23,8 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //let cuisineCell = CuisineTableViewCell.self
     
-    var row: Int?
-    var cuisine = ["Recomendation", "Indonesian", "Western", "Jepang","Chinese","Thai"]
+    var row: Int?, rows: Int?
+    var cuisine = ["Recomendation", "Indonesia", "Western", "Jepang","Chinese","Thai"]
     //TODO
     //bikin logo
     var cuisineLogo = ["pasar", "western", "western", "western","western", "western"]
@@ -37,7 +37,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadRecipe()
+        //belum di kategoriin sesuai cuisine
+        
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
         
@@ -56,6 +57,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
         };
+        
+        //load indonesian food only
         
         //print(searchResults)
     }
@@ -77,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //load datanya kemari
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //var i:Int=0
+        rows = indexPath.row
         //TODO
         //asumsu bahwa yg nomor record yang nomor 1 adalah selalu rekomendasi
         if indexPath.row == 0 {
@@ -96,6 +99,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.cuisineImg.image = UIImage(named: cuisineLogo[indexPath.row])
             cell.category = cuisine[indexPath.row]
             cell.cellProtocol = self
+            
+            cell.searchResults = searchResults
             //            print("START searchResults disini")
             //            print(self.searchResults)
             //            print("END searchResults disini")
@@ -110,7 +115,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        row = indexPath.row
         if indexPath.row == 0 {
             performSegue(withIdentifier: "homeShowRecipe", sender: self)
         }
