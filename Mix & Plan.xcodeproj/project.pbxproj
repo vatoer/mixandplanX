@@ -111,7 +111,6 @@
 				8D93052422DF3D9300C80F74 /* Network */,
 				170A691522D8C94F007713C7 /* AppDelegate.swift */,
 				17A65DCB22DD9D3B00A3FD3D /* Home */,
-				17A65DE122DDE43A00A3FD3D /* Menu Plan */,
 				17A65DD422DDA57700A3FD3D /* MixMe */,
 				17A65DDC22DDAACE00A3FD3D /* ShopList */,
 				17FEC0ED22DEDADE0019778E /* AllMenu */,
@@ -134,6 +133,7 @@
 				170A692A22DD8BD7007713C7 /* CuisineTableViewCell.swift */,
 				170A692C22DD8D3C007713C7 /* MenuHomeCollectionViewCell.swift */,
 				8D93052C22DF3ECF00C80F74 /* SearchVCandDelegate.swift */,
+				17A65DE122DDE43A00A3FD3D /* Menu Plan */,
 			);
 			path = Home;
 			sourceTree = "<group>";
