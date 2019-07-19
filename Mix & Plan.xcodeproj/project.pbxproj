@@ -32,6 +32,7 @@
 		17FEC0F422DEF23D0019778E /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0F322DEF23D0019778E /* RecipeViewController.swift */; };
 		17FEC0F622E03D700019778E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0F522E03D700019778E /* CustomButton.swift */; };
 		17FEC0F922E04D820019778E /* CustomDisplayImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0F822E04D820019778E /* CustomDisplayImage.swift */; };
+		17FEC0FB22E16C820019778E /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEC0FA22E16C820019778E /* StepsViewController.swift */; };
 		5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */; };
 		8D93052722DF3DC000C80F74 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93052622DF3DC000C80F74 /* QueryService.swift */; };
 		8D93052922DF3E0700C80F74 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93052822DF3E0700C80F74 /* RecipeModel.swift */; };
@@ -67,6 +68,7 @@
 		17FEC0F322DEF23D0019778E /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		17FEC0F522E03D700019778E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		17FEC0F822E04D820019778E /* CustomDisplayImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisplayImage.swift; sourceTree = "<group>"; };
+		17FEC0FA22E16C820019778E /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		5091CE8C22DED574001C50D3 /* deletecellprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deletecellprotocol.swift; sourceTree = "<group>"; };
 		8D93052622DF3DC000C80F74 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		8D93052822DF3E0700C80F74 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				17FEC0F022DEE9C60019778E /* Recipe.storyboard */,
 				17FEC0F322DEF23D0019778E /* RecipeViewController.swift */,
+				17FEC0FA22E16C820019778E /* StepsViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				170A691622D8C94F007713C7 /* AppDelegate.swift in Sources */,
 				17A65DE522DDE7C600A3FD3D /* MenuPlanTableViewCell.swift in Sources */,
 				17FEC0F622E03D700019778E /* CustomButton.swift in Sources */,
+				17FEC0FB22E16C820019778E /* StepsViewController.swift in Sources */,
 				17A65DE322DDE45900A3FD3D /* MenuPlanViewController.swift in Sources */,
 				5091CE8D22DED574001C50D3 /* deletecellprotocol.swift in Sources */,
 				17A65DE022DDAC4000A3FD3D /* ShopListTableViewCell.swift in Sources */,

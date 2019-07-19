@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
 //protocol ini akan digunakan sebagai penghubung CuisineTableViewCell dengan ViewController parentnya
@@ -22,6 +23,7 @@ class CuisineTableViewCell: UITableViewCell {
     @IBOutlet weak var dispMenuList: UICollectionView!
     
     let vc = ViewController()
+    let collView = MenuHomeCollectionViewCell()
     
     //define cellProtocol
     //akan dipanggil ketika didselect
@@ -33,7 +35,9 @@ class CuisineTableViewCell: UITableViewCell {
     var searchResults: [RecipeModel] = []
     let queryService = QueryService()
     var i: Int = 0
-    //bagaimana akses menuNames ini dari veiw
+    var y: Int = 0
+    
+    //bagaimana akses menuNames ini dari view
     let menuNames = ["Lasagna", "Pasta", "Fish and Chips"]
     var recipes: [String] = []
     let images = ["satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu"]
@@ -52,6 +56,19 @@ class CuisineTableViewCell: UITableViewCell {
 
 extension CuisineTableViewCell:UICollectionViewDataSource, UICollectionViewDelegate,
 UIViewControllerTransitioningDelegate{
+    
+//    @objc func addMenuToPlan(sender: UIButton){
+//        if i < 7 {
+//            if y < 5 {
+//                collView.addMenu()
+//                print("y")
+//                (y+1)
+//            }
+//            (i+1)
+//        }
+//    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchResults.count
     }
@@ -65,6 +82,7 @@ UIViewControllerTransitioningDelegate{
         let url = searchResults[indexPath.row].imageURL
         menuCell.HomeMenuImg.load(url: url)
         menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
+        //menuCell.addMenuPBtn.addTarget(self, action: #selector(addMenuToPlan(sender:)), for: .touchUpInside)
         
         //TODO pisahkan perkategori
         return menuCell

@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class MenuHomeCollectionViewCell: UICollectionViewCell {
     
 
+    var recipeP : [RecipePlan]?
+     var i = 0
+     var y = 0
+    
     @IBOutlet weak var HomeMenuImg: UIImageView!
     @IBOutlet weak var HomeMenuLbl: UILabel!
-    @IBAction func addMenuPlan(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var addMenuPBtn: UIButton!
     
-    var category:String=""
+    var category:String = ""
     
     override func awakeFromNib() {
         self.contentView.layer.cornerRadius = 5.0
@@ -35,4 +38,17 @@ class MenuHomeCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         
     }
+    
+//    func addMenu(){
+//        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        
+//        let entity = NSEntityDescription.entity(forEntityName: "RecipePlan", in: context)
+//        let manageObj = NSManagedObject(entity: entity!, insertInto: context)
+//        
+//        manageObj.setValue(HomeMenuLbl.text, forKey: "name")
+//        manageObj.setValue(i, forKey: "days")
+//        manageObj.setValue(y, forKey: "optNumber")
+//    }
 }

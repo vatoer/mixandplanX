@@ -20,14 +20,15 @@
     </entity>
     <entity name="RecipePlan" representedClassName="RecipePlan" syncable="YES" codeGenerationType="class">
         <attribute name="days" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="optNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="recipeId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uniqueId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="RecipePlan" positionX="-54" positionY="27" width="128" height="105"/>
-        <element name="RecipeIngredients" positionX="-36" positionY="54" width="128" height="90"/>
         <element name="Ingredient" positionX="-18" positionY="72" width="128" height="105"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="RecipeIngredients" positionX="-36" positionY="54" width="128" height="90"/>
+        <element name="RecipePlan" positionX="-54" positionY="27" width="128" height="120"/>
     </elements>
 </model>
