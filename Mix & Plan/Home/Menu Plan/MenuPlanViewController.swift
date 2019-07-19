@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var menuPlanList: UITableView!
-    
+    //var recipeP : [RecipePlan]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //kalo data di coredatanya ga empty, baru tampilin list day nya
         return 7
+        
+        //kalo coredatanya empty, tampilin "you currently don't have any food plan yet"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,6 +53,8 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
     @objc func replanMenu(){
         print("hello")
         //hapus semua collection view cell nya
+        //pake menuPlan.removeAll() -> hapus semua data di coredatanya
+        menuPlanList.reloadData()
     }
 
     /*

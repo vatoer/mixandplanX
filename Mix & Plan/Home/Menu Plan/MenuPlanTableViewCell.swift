@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //menus nya narik dari coredata recipePlan
+    var recipeP : [RecipePlan] = []
     var menus = ["Nasi Goreng Ayam", "Penne Carbonara", "Miso Soup"]
 
     @IBOutlet weak var dayLbl: UILabel!
@@ -29,13 +32,14 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menus.count
+        return recipeP.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let menuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
         menuCell.menuImg.image = UIImage(named: "satu")
         menuCell.menuLbl.text = menus[indexPath.row]
+        //add target kalo button delete (x) nya di klik nanti menu nya hilang
         
         return menuCell
     }
