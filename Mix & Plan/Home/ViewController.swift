@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //asumsu bahwa yg nomor record yang nomor 1 adalah selalu rekomendasi
         if indexPath.row == 0 {
             let recommenCell = tableView.dequeueReusableCell(withIdentifier: "recommendCell") as! RecommendTableViewCell
-            recommenCell.recommendImg.image = UIImage(named: "pasar")
+            recommenCell.recommendImg.image = UIImage(named: "chef")
             recommenCell.recommendLbl.text = "Fried Rice with chicken"
             
             return recommenCell
