@@ -15,6 +15,8 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     var ingredientName = ["Chicken", "Beef", "Salmon", "Tomato", "Egg", "Carrot", "Broccoli"]
     
+    var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "", selected: false),Ingredients(name: "Beef", image: "", selected: false),Ingredients(name: "Fish", image: "", selected: false),Ingredients(name: "Tomato", image: "", selected: false),Ingredients(name: "Egg", image: "", selected: false),Ingredients(name: "Carrot", image: "", selected: false),Ingredients(name: "Broccoli", image: "", selected: false)]
+    
     @IBAction func mixMeBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMixMeMenuResult", sender: self)
     }
@@ -36,11 +38,31 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ingredientCell", for: indexPath) as! IngredientsCollectionViewCell
         ingCell.dispIngredientImg.image = UIImage(named: "satu")
-        ingCell.ingredientLbl.text = ingredientName[indexPath.row]
+        ingCell.ingredientLbl.text = ingredient[indexPath.row].name
+        
+        let ing = ingredient[indexPath.row]
+        
+        if ing.selected{
+            ingCell.layer.borderColor = UIColor(red: 255/255.0, green: 129/255.0, blue: 38/255.0, alpha: 100.0).cgColor
+            ingCell.layer.borderWidth = 4
+        }
+        else{
+            ingCell.layer.borderColor = UIColor.clear.cgColor
+        }
+        
         
         return ingCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        ingredient[indexPath.row].selected = !ingredient[indexPath.row].selected
+        for ing in ingredient{
+            if ing.selected{
+                break
+            }
+        }
+        collectionView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
