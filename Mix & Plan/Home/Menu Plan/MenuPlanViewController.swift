@@ -13,11 +13,11 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var menuPlanList: UITableView!
 
-    var recipes : [Recipe] = []
+    var recipes : Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       loadData()
+       //loadData()
         
         
         let replanBtn = UIBarButtonItem(title: "Re-plan", style: .plain, target: self, action: #selector(replanMenu))
@@ -54,21 +54,31 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
     @objc func replanMenu(){
         
         //hapus semua collection view cell nya
-        recipes.removeAll()
+        
+        //deleteAll(recipe: recipes)
         menuPlanList.reloadData()
     }
 
-    func loadData(){
+    
+    func deleteAll(recipe: Recipe){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        do{
-            recipes = try context.fetch(Recipe.fetchRequest())
-        }catch{
-            print("error")
-        }
-        menuPlanList.reloadData()
+        context.delete(recipe)
     }
+    
+    
+//    func loadData(){
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        do{
+//            recipes = try context.fetch(Recipe.fetchRequest())
+//        }catch{
+//            print("error")
+//        }
+//        menuPlanList.reloadData()
+//    }
     
     /*
     // MARK: - Navigation

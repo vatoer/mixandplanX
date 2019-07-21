@@ -12,6 +12,7 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
 
     var menuNameOpt: [String] = []
     var menuImgName: [String] = []
+    var recipes: [RecipeModel] = []
     
     @IBOutlet weak var allMenuCollView: UICollectionView!
     

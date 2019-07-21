@@ -22,6 +22,7 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        loadData()
         // Initialization code
         MenuPlanCollView.delegate = self
         MenuPlanCollView.dataSource = self
@@ -41,8 +42,8 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         let menu_Cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
         
         //datanya diambil dari si core datanya
-        menu_Cell.menuImg.image = UIImage(named: "western")
-        menu_Cell.menuLbl.text = menus[indexPath.row]
+        menu_Cell.menuImg.image = UIImage(named: "chef")
+        menu_Cell.menuLbl.text = recipes[indexPath.row].name
         //add target kalo button delete (x) nya di klik nanti menu nya hilang
         
         return menu_Cell
@@ -53,5 +54,16 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         
     }
     
+    func loadData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            recipes = try context.fetch(Recipe.fetchRequest())
+        }catch{
+            print("error")
+        }
+        MenuPlanCollView.reloadData()
+    }
 
 }

@@ -130,6 +130,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "showCuisineAllMenu"{
             let dest = segue.destination as! AllMenuViewController
             dest.navigationItem.title = "\(cuisine[row!])"
+            //let recipes = sender as! [searchResults]
+            //dest.recipes = recipes
+            
             
         }
         if segue.identifier == "showRecipeFromHome"{
