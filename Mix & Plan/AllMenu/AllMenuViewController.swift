@@ -26,6 +26,7 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hidesBottomBarWhenPushed = true
         allMenuCollView.delegate = self
         allMenuCollView.dataSource = self
         createMenuList()

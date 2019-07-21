@@ -25,6 +25,7 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! AllMenuViewController
         dest.selected = ingSelected
+        dest.hidesBottomBarWhenPushed = true
     }
     
     override func viewDidLoad() {
@@ -88,5 +89,6 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

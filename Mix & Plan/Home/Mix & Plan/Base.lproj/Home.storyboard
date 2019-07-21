@@ -10,13 +10,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AllMenu-->
-        <scene sceneID="76t-Xy-TWT">
+        <!--Menu View Controller-->
+        <scene sceneID="0W8-wn-uPy">
             <objects>
-                <viewControllerPlaceholder storyboardName="AllMenu" id="FCo-JB-Cjf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rv6-y6-DNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="X4j-9P-VNf" customClass="MenuViewController" customModule="Mix___Plan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zI-mj-bD8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nvf-Z5-lnY">
+                                <rect key="frame" x="20" y="100" width="374" height="762"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z0F-oz-AdO">
+                                    <size key="itemSize" width="174" height="176"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cuisineMenuCell" id="UdH-fi-ZPm" customClass="CuisineMenuCollectionViewCell" customModule="Mix___Plan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="176"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCD-P9-gU9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="130"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pz-Rk-W7g">
+                                                    <rect key="frame" x="7" y="138" width="138" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-mo-HdE">
+                                                    <rect key="frame" x="149" y="143" width="28" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="plus"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="cMenuLbl" destination="7Pz-Rk-W7g" id="fTK-G0-Ecr"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c6g-om-yEU"/>
+                    </view>
+                    <connections>
+                        <outlet property="MenuCollView" destination="nvf-Z5-lnY" id="DJ2-0a-nJK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrI-e8-e1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855" y="-321"/>
+            <point key="canvasLocation" x="3040.579710144928" y="-365.625"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -242,8 +296,8 @@
                         <outlet property="popUpView" destination="FyE-fh-uTt" id="Rjf-dZ-cvd"/>
                         <outlet property="searchDisplayController" destination="lwI-vf-eRj" id="UzE-dF-VVB"/>
                         <segue destination="xfP-bP-y74" kind="show" identifier="showMenuPlan" id="DuG-HR-HAu"/>
-                        <segue destination="FCo-JB-Cjf" kind="show" identifier="showCuisineAllMenu" id="78D-Tx-haa"/>
                         <segue destination="XO8-dS-UIc" kind="show" identifier="showRecipeFromHome" id="agI-yS-tFn"/>
+                        <segue destination="X4j-9P-VNf" kind="show" identifier="showCuisineAllMenu" id="e69-9c-fO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -47,11 +47,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHp-5Y-c3u">
-                                                    <rect key="frame" x="142" y="133" width="30" height="48"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHp-5Y-c3u">
+                                                    <rect key="frame" x="149" y="146" width="16" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                    <state key="normal" title="+">
+                                                    <state key="normal" image="plus">
                                                         <color key="titleColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                 </button>
@@ -89,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" width="15.5" height="15.5"/>
         <image name="satu" width="2988" height="2988"/>
     </resources>
 </document>

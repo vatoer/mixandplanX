@@ -45,20 +45,33 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-U4-DTO">
-                                        <rect key="frame" x="19" y="61" width="364" height="170"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-U4-DTO">
+                                        <rect key="frame" x="19" y="39.5" width="364" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="FKG-3N-5yi"/>
                                         </constraints>
+                                        <string key="text">Vegetable oil
+Onions, garlic, and carrots
+2 eggs
+Rice
+Soy sauce
+Green peas</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-c5-mun">
-                                        <rect key="frame" x="19" y="239" width="396" height="170"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-c5-mun">
+                                        <rect key="frame" x="19" y="307" width="364" height="255"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="q9J-tp-w7G"/>
+                                            <constraint firstAttribute="height" constant="255" id="q9J-tp-w7G"/>
                                         </constraints>
+                                        <string key="text">Add Vegetable oil in a pan or wok.
+Stir-fry the onions, garlic, and carrots until tender.
+Add 2 eggs in a pan.
+Add rice and fry the rice by lightly browning in a pan or wok.
+Make a large well in the center of the pan with the rice.
+Soy sauce is optional but adds a savory flavor to the rice.
+Add green peas at the end to retain color and shape.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,9 +88,9 @@
                                     <constraint firstItem="Pq8-R6-y3Y" firstAttribute="leading" secondItem="lo8-Xg-S8j" secondAttribute="leading" constant="19" id="QbY-do-QPS"/>
                                     <constraint firstItem="Pq8-R6-y3Y" firstAttribute="top" secondItem="lo8-Xg-S8j" secondAttribute="top" constant="11" id="Qqy-8u-Rt3"/>
                                     <constraint firstItem="bwH-U4-DTO" firstAttribute="leading" secondItem="Pq8-R6-y3Y" secondAttribute="leading" id="cgY-sd-vNk"/>
-                                    <constraint firstItem="eWc-c5-mun" firstAttribute="top" secondItem="mtR-Hh-N9t" secondAttribute="top" constant="-18" id="k8I-QK-JeE"/>
+                                    <constraint firstItem="eWc-c5-mun" firstAttribute="top" secondItem="mtR-Hh-N9t" secondAttribute="top" constant="50" id="k8I-QK-JeE"/>
                                     <constraint firstAttribute="bottom" secondItem="mtR-Hh-N9t" secondAttribute="bottom" constant="77" id="vHT-vq-2Ez"/>
-                                    <constraint firstItem="eWc-c5-mun" firstAttribute="trailing" secondItem="lo8-Xg-S8j" secondAttribute="trailing" constant="19" id="zkG-u2-M1G"/>
+                                    <constraint firstItem="eWc-c5-mun" firstAttribute="trailing" secondItem="lo8-Xg-S8j" secondAttribute="trailing" constant="-13" id="zkG-u2-M1G"/>
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-IP-uxv">

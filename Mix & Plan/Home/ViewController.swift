@@ -26,13 +26,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     var searchResults: [RecipeModel] = []
+    var cuisineMenu: [RecipeModel] = []
     var recomendedRecipe: RecipeModel?
     let queryService = QueryService()
     
     //let cuisineCell = CuisineTableViewCell.self
     
     var row: Int?
-    var cuisine = ["Recomendation", "Indonesian", "Western", "Jepang","Chinese","Thai"]
+    var cuisine = ["Recomendation", "Indonesia", "Western", "Jepang","Chinese","Thai"]
     //TODO
     //bikin logo
     var cuisineLogo = ["pasar", "western", "western", "western","western", "western"]
@@ -139,11 +140,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCuisineAllMenu"{
-            let dest = segue.destination as! AllMenuViewController
+            cuisineMenu.removeAll()
+            let dest = segue.destination as! MenuViewController
             dest.navigationItem.title = "\(cuisine[row!])"
-            //let recipes = sender as! [searchResults]
-            //dest.recipes = recipes
+            for i in 1..<searchResults.count{
+                if searchResults[i].tag == cuisine[row!]{
+                    cuisineMenu.append(searchResults[i])
+                }
+                dest.menus = cuisineMenu
+                
+            }
             
+            dest.hidesBottomBarWhenPushed = true
             
         }
         if segue.identifier == "showRecipeFromHome"{
@@ -155,6 +163,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("cak==========")
             print( recipe.name )
             print("cuk==========")
+            dest.hidesBottomBarWhenPushed = true
+        }
+        
+        if segue.identifier == "showMenuPlan"{
+            let dest = segue.destination as! MenuPlanViewController
+            dest.hidesBottomBarWhenPushed = true
         }
     }
 }
