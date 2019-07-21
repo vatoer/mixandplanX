@@ -1,17 +1,18 @@
 //
-//  MenuCollectionViewCell.swift
+//  AllMenuCollectionViewCell.swift
 //  Mix & Plan
 //
-//  Created by aurelia  natasha on 16/07/19.
+//  Created by aurelia  natasha on 21/07/19.
 //  Copyright © 2019 aurelia  natasha. All rights reserved.
 //
 
 import UIKit
 
-class MenuCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var menuImg: UIImageView!
-    @IBOutlet weak var menuLbl: UILabel!
-    @IBOutlet weak var deleteBtn: UIButton!
+class AllMenuCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var allMenuImg: UIImageView!
+    @IBOutlet weak var allMenuLbl: UILabel!
+    @IBOutlet weak var addMenuBtn: UIButton!
     
     override func awakeFromNib() {
         self.contentView.layer.cornerRadius = 5.0

@@ -44,7 +44,10 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         //datanya diambil dari si core datanya
         menu_Cell.menuImg.image = UIImage(named: "chef")
         menu_Cell.menuLbl.text = recipes[indexPath.row].name
+        menu_Cell.deleteBtn.tag = indexPath.row
         //add target kalo button delete (x) nya di klik nanti menu nya hilang
+        menu_Cell.deleteBtn.addTarget(self, action: #selector(deleteMenuPlan), for: .touchUpInside)
+        
         
         return menu_Cell
     }
@@ -52,6 +55,28 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        // performSegue(withIdentifier: "planShowRecipe", sender: self)
         
+    }
+    
+    @objc func deleteMenuPlan(sender :UIButton){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let id = recipes[sender.tag].id
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+        fetchReq.predicate = NSPredicate(format: "id = %@", id!)
+        
+        do {
+            let test = try context.fetch(fetchReq)
+            let objToDelete = test[0] as! NSManagedObject
+            context.delete(objToDelete)
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
+        loadData()
     }
     
     func loadData(){

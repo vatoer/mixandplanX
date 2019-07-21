@@ -12,18 +12,24 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var searchIngredients: UISearchBar!
     @IBOutlet weak var ingredientsCollView: UICollectionView!
-    
-    var ingredientName = ["Chicken", "Beef", "Salmon", "Tomato", "Egg", "Carrot", "Broccoli"]
+
     
     var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "", selected: false),Ingredients(name: "Beef", image: "", selected: false),Ingredients(name: "Fish", image: "", selected: false),Ingredients(name: "Tomato", image: "", selected: false),Ingredients(name: "Egg", image: "", selected: false),Ingredients(name: "Carrot", image: "", selected: false),Ingredients(name: "Broccoli", image: "", selected: false)]
+    
+    var ingSelected: [Ingredients] = []
     
     @IBAction func mixMeBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMixMeMenuResult", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! AllMenuViewController
+        dest.selected = ingSelected
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ingSelected.removeAll()
         ingredientsCollView.delegate = self
         ingredientsCollView.dataSource = self
        
@@ -32,7 +38,7 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ingredientName.count
+        return ingredient.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,12 +61,21 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let ing = ingredient[indexPath.row]
         ingredient[indexPath.row].selected = !ingredient[indexPath.row].selected
-        for ing in ingredient{
-            if ing.selected{
-                break
+        if(ingredient[indexPath.row].selected == true){
+            ingSelected.append(ing)
+        }else{
+            if(ingSelected.isEmpty == false){
+                for i in 0..<ingSelected.count{
+                    if(ingSelected[i].name == ing.name){
+                        ingSelected.remove(at: i)
+                        break
+                    }
+                }
             }
         }
+        
         collectionView.reloadData()
     }
 

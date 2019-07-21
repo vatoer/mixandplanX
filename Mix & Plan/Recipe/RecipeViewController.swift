@@ -25,11 +25,12 @@ class RecipeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        
         //recipeImageView.load(url: recipe?.imageURL ?? URL(string: "https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+Guide")!)
         guard let url = recipe?.imageURL else { return }
         recipeImageView.load(url: url)
         recipeNameLabel.text = recipe?.name
+        
+        
         
     }
     

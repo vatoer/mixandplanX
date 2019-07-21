@@ -14,6 +14,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var homeSearchBar: UISearchBar!
     @IBOutlet weak var CategoryTblView: UITableView!
+    @IBOutlet var popUpView: UIView!
+    
+    var blurEffect:UIVisualEffectView! = nil
     
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
@@ -44,9 +47,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         loadRecipeRecomendation()
         
-        
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
+        
+        blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffect.Style.light))
+        blurEffect.frame = self.view.bounds
+        blurEffect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
     }
     
@@ -109,8 +115,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.category = cuisine[indexPath.row]
             cell.cellProtocol = self
             cell.loadRecipe()
-            
-            
+            cell.popUpView = popUpView
+            cell.blurEffect = blurEffect
             return cell
         }
     }
@@ -123,6 +129,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else {
             performSegue(withIdentifier: "showCuisineAllMenu", sender: self)
         }
+    }
+    
+    @IBAction func donePopUp(_ sender: UIButton) {
+        popUpView.removeFromSuperview()
+        blurEffect.removeFromSuperview()
     }
     
     
@@ -146,7 +157,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("cuk==========")
         }
     }
-    
 }
 
 extension ViewController: CuisineTableViewCellClick {
@@ -163,4 +173,3 @@ extension ViewController: CuisineTableViewCellClick {
     
     
 }
-

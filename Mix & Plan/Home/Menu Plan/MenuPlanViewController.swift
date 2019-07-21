@@ -12,13 +12,10 @@ import CoreData
 class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var menuPlanList: UITableView!
-
-    var recipes : Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        //loadData()
-        
         
         let replanBtn = UIBarButtonItem(title: "Re-plan", style: .plain, target: self, action: #selector(replanMenu))
         
@@ -55,30 +52,33 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //hapus semua collection view cell nya
         
-        //deleteAll(recipe: recipes)
-        menuPlanList.reloadData()
+        deleteAll()
     }
 
     
-    func deleteAll(recipe: Recipe){
+    func deleteAll(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        context.delete(recipe)
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
+       
+    
+        do {
+            let test = try context.fetch(fetchReq)
+            for i in 0..<test.count {
+                let objToDelete = test[i] as! NSManagedObject
+                context.delete(objToDelete)
+            }
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
+        
     }
-    
-    
-//    func loadData(){
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//        do{
-//            recipes = try context.fetch(Recipe.fetchRequest())
-//        }catch{
-//            print("error")
-//        }
-//        menuPlanList.reloadData()
-//    }
     
     /*
     // MARK: - Navigation

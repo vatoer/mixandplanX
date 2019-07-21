@@ -17,11 +17,14 @@ protocol CuisineTableViewCellClick {
     func recipeClick(recipe: RecipeModel)
 }
 
-class CuisineTableViewCell: UITableViewCell {
+class CuisineTableViewCell: UITableViewCell{
     
     @IBOutlet weak var cuisineImg: UIImageView!
     @IBOutlet weak var cuisineLbl: UILabel!
     @IBOutlet weak var dispMenuList: UICollectionView!
+    
+    var popUpView:UIView! = nil
+    var blurEffect:UIVisualEffectView! = nil
     
     let vc = ViewController()
     
@@ -57,7 +60,7 @@ UIViewControllerTransitioningDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        row = indexPath.row
+//        row = indexPath.row
         
         let menuCell = collectionView
             .dequeueReusableCell(withReuseIdentifier: "menuCuisineCell", for: indexPath) as! MenuHomeCollectionViewCell
@@ -77,7 +80,11 @@ UIViewControllerTransitioningDelegate{
     
     @objc func addButton(sender: UIButton){
        // self.days = 0
-        addMenu()
+        addMenu(rowAt: sender.tag)
+        //ViewController().view.addSubview(blurEffect)
+        //vc.CategoryTblView.addSubview(blurEffect)
+        //vc.CategoryTblView.addSubview(blurEffect)
+        //ViewController().view.addSubview(popUpView)
         //print(sender.tag)
     }
     
@@ -87,9 +94,7 @@ UIViewControllerTransitioningDelegate{
         //
         //cellProtocol?.itemClick(index: indexPath.row)
         cellProtocol?.recipeClick(recipe: searchResults[indexPath.row])
-        
     }
-    
     func loadRecipe(){
         print(#function)
         print(category)
@@ -107,7 +112,7 @@ UIViewControllerTransitioningDelegate{
         
     }
     
-    func addMenu(){
+    func addMenu(rowAt : Int){
         
         //add menu ke coredatanya berdasarkan days nya, add menu tambahin parameter days
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -115,11 +120,11 @@ UIViewControllerTransitioningDelegate{
         
             let re = Recipe(context: context)
         
-            re.name = searchResults[row].name
-            re.id = searchResults[row].id
-            re.imageURL = searchResults[row].imageURL.absoluteString
+            re.name = searchResults[rowAt].name
+            re.id = searchResults[rowAt].id
+            re.imageURL = searchResults[rowAt].imageURL.absoluteString
     //        re.instruction = recipe.instruction
-            re.contributor = searchResults[row].contributor
+            re.contributor = searchResults[rowAt].contributor
             re.days = Int16(days)
     
             do{
