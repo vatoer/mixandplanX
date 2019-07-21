@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -42,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRecipeRecomendation()
+        
+        
         CategoryTblView.delegate = self
         CategoryTblView.dataSource = self
         
@@ -83,22 +86,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //load datanya kemari
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //var i:Int=0
         //TODO
         //asumsu bahwa yg nomor record yang nomor 1 adalah selalu rekomendasi
         if indexPath.row == 0 {
             let recommenCell = tableView.dequeueReusableCell(withIdentifier: "recommendCell") as! RecommendTableViewCell
             
-            //recommenCell.recommendImg.image = UIImage(named: "pasar")
-            //recommenCell.recommendLbl.text = "Fried Rice with chicken"
             
             if let recomendedRecipe = self.recomendedRecipe {
                 recommenCell.recommendImg.load(url: recomendedRecipe.imageURL)
                 recommenCell.recommendLbl.text = recomendedRecipe.name
             }
-            
-            
-            
             
             return recommenCell
             
@@ -112,6 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.category = cuisine[indexPath.row]
             cell.cellProtocol = self
             cell.loadRecipe()
+            
             
             return cell
         }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 //https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
 //protocol ini akan digunakan sebagai penghubung CuisineTableViewCell dengan ViewController parentnya
@@ -23,22 +25,18 @@ class CuisineTableViewCell: UITableViewCell {
     
     let vc = ViewController()
     
-
-    
     //define cellProtocol
     //akan dipanggil ketika didselect
     var cellProtocol: CuisineTableViewCellClick?
     
     var category:String = "not available"
     
+    var days: Int = 0
     var row: Int = 0
+    
     var searchResults: [RecipeModel] = []
     let queryService = QueryService()
-    var i: Int = 0
-    //bagaimana akses menuNames ini dari veiw
-    let menuNames = ["Lasagna", "Pasta", "Fish and Chips"]
     var recipes: [String] = []
-    let images = ["satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu","satu", "satu", "satu", "satu"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +46,6 @@ class CuisineTableViewCell: UITableViewCell {
         dispMenuList.delegate = self
         dispMenuList.dataSource = self
     }
-    
     
 }
 
@@ -69,15 +66,19 @@ UIViewControllerTransitioningDelegate{
         menuCell.HomeMenuImg.load(url: url)
         menuCell.HomeMenuLbl.text = searchResults[indexPath.row].name
         
+        
         menuCell.addMenuPBtn.tag = indexPath.row
         menuCell.addMenuPBtn.addTarget(self, action: #selector(self.addButton), for: .touchUpInside)
+        
         
         //TODO pisahkan perkategori
         return menuCell
     }
     
     @objc func addButton(sender: UIButton){
-        print(sender.tag)
+       // self.days = 0
+        addMenu()
+        //print(sender.tag)
     }
     
     //fungsi ini dipanggil ketika cell di pilih
@@ -87,7 +88,6 @@ UIViewControllerTransitioningDelegate{
         //cellProtocol?.itemClick(index: indexPath.row)
         cellProtocol?.recipeClick(recipe: searchResults[indexPath.row])
         
-        //print(searchResults[0].name)
     }
     
     func loadRecipe(){
@@ -105,8 +105,29 @@ UIViewControllerTransitioningDelegate{
             if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
         };
         
-        //print(searchResults)
     }
+    
+    func addMenu(){
+        
+        //add menu ke coredatanya berdasarkan days nya, add menu tambahin parameter days
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+        
+            let re = Recipe(context: context)
+        
+            re.name = searchResults[row].name
+            re.id = searchResults[row].id
+            re.imageURL = searchResults[row].imageURL.absoluteString
+    //        re.instruction = recipe.instruction
+            re.contributor = searchResults[row].contributor
+            re.days = Int16(days)
+    
+            do{
+                try context.save()
+            }catch{
+                print("failed")
+            }
+        }
 }
 
 extension UIImageView {

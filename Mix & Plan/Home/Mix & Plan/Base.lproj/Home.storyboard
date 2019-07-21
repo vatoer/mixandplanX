@@ -157,7 +157,7 @@
                                                                     <connections>
                                                                         <outlet property="HomeMenuImg" destination="0Gm-gt-XBX" id="leq-sv-iYX"/>
                                                                         <outlet property="HomeMenuLbl" destination="gn1-2f-Lmo" id="XTg-tK-XkC"/>
-                                                                        <outlet property="addMenuPBtn" destination="cXU-jB-kdg" id="wLc-rE-O1W"/>
+                                                                        <outlet property="addMenuPBtn" destination="cXU-jB-kdg" id="l44-8s-xcB"/>
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>

@@ -12,13 +12,14 @@ import CoreData
 class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var menuPlanList: UITableView!
-    //var recipeP : [RecipePlan]?
+
+    var recipes : [Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       loadData()
         
-//        let replanBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action:
-//            #selector(replanMenu))
+        
         let replanBtn = UIBarButtonItem(title: "Re-plan", style: .plain, target: self, action: #selector(replanMenu))
         
         self.navigationItem.rightBarButtonItem = replanBtn
@@ -51,12 +52,24 @@ class MenuPlanViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @objc func replanMenu(){
-        print("hello")
+        
         //hapus semua collection view cell nya
-        //pake menuPlan.removeAll() -> hapus semua data di coredatanya
+        recipes.removeAll()
         menuPlanList.reloadData()
     }
 
+    func loadData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do{
+            recipes = try context.fetch(Recipe.fetchRequest())
+        }catch{
+            print("error")
+        }
+        menuPlanList.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
