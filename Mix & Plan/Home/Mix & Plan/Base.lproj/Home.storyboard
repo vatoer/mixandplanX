@@ -36,10 +36,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="176"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCD-P9-gU9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="130"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pz-Rk-W7g">
                                                     <rect key="frame" x="7" y="138" width="138" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,9 +48,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="plus"/>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uG3-2i-KoY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="132"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="cMenuImg" destination="uG3-2i-KoY" id="53t-5Q-5sS"/>
                                             <outlet property="cMenuLbl" destination="7Pz-Rk-W7g" id="fTK-G0-Ecr"/>
                                         </connections>
                                     </collectionViewCell>
@@ -185,7 +186,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn1-2f-Lmo">
-                                                                                <rect key="frame" x="13" y="138" width="138" height="35"/>
+                                                                                <rect key="frame" x="25.5" y="138" width="138" height="1"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="138" id="haD-H1-GDU"/>
                                                                                 </constraints>
@@ -194,20 +195,20 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXU-jB-kdg">
-                                                                                <rect key="frame" x="159" y="143" width="28" height="22"/>
-                                                                                <state key="normal" title="+" image="plus"/>
+                                                                                <rect key="frame" x="162.5" y="146" width="15.5" height="22"/>
+                                                                                <state key="normal" image="plus"/>
                                                                             </button>
                                                                         </subviews>
                                                                     </view>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="0Gm-gt-XBX" secondAttribute="trailing" id="7gc-c5-Wr2"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="cXU-jB-kdg" secondAttribute="trailing" constant="-1" id="94c-zo-K3E"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cXU-jB-kdg" secondAttribute="trailing" constant="8" id="94c-zo-K3E"/>
                                                                         <constraint firstItem="gn1-2f-Lmo" firstAttribute="top" secondItem="0Gm-gt-XBX" secondAttribute="bottom" constant="8" symbolic="YES" id="KDw-xZ-3ow"/>
                                                                         <constraint firstItem="0Gm-gt-XBX" firstAttribute="top" secondItem="cN1-lF-o75" secondAttribute="top" id="YxM-2h-w6t"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="cXU-jB-kdg" secondAttribute="bottom" constant="20" id="bOt-O7-vN6"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="cXU-jB-kdg" secondAttribute="bottom" constant="17" id="bOt-O7-vN6"/>
                                                                         <constraint firstAttribute="bottomMargin" secondItem="gn1-2f-Lmo" secondAttribute="bottom" constant="12" id="itX-Q4-jZT"/>
-                                                                        <constraint firstItem="cXU-jB-kdg" firstAttribute="leading" secondItem="gn1-2f-Lmo" secondAttribute="trailing" constant="8" symbolic="YES" id="mnu-f7-8HK"/>
+                                                                        <constraint firstItem="cXU-jB-kdg" firstAttribute="leading" secondItem="gn1-2f-Lmo" secondAttribute="trailing" constant="-1" id="mnu-f7-8HK"/>
                                                                         <constraint firstItem="0Gm-gt-XBX" firstAttribute="leading" secondItem="cN1-lF-o75" secondAttribute="leading" id="um4-Kk-RAI"/>
                                                                     </constraints>
                                                                     <connections>
@@ -487,7 +488,7 @@
         <image name="western" width="618" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jCj-kr-QpW"/>
+        <segue reference="agI-yS-tFn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.63741705010000005" blue="0.24455676700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

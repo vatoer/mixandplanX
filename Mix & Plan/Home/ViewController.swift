@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
             if let recomendedRecipe = self.recomendedRecipe {
-                recommenCell.recommendImg.load(url: recomendedRecipe.imageURL)
+                recommenCell.recommendImg.image = UIImage(named: "nasi goreng")
                 recommenCell.recommendLbl.text = recomendedRecipe.name
             }
             
@@ -169,6 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "showMenuPlan"{
             let dest = segue.destination as! MenuPlanViewController
             dest.hidesBottomBarWhenPushed = true
+            
         }
     }
 }

@@ -33,7 +33,7 @@ class QueryService {
         //0
         var code: String = "WPEgKA3e"
         switch searchTerm {
-        case "Indonesian":
+        case "Indonesia":
              code = "WPEgKA3e"
         case "Western":
             code = "aE9Vskqz"

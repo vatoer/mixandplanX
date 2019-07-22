@@ -22,12 +22,14 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        self.navigationItem.title = ""
         
         // Do any additional setup after loading the view.
         
         //recipeImageView.load(url: recipe?.imageURL ?? URL(string: "https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+Guide")!)
-        guard let url = recipe?.imageURL else { return }
-        recipeImageView.load(url: url)
+//        guard let url = recipe?.imageURL else { return }
+//        recipeImageView.load(url: url)
+        recipeImageView.image = UIImage(named: "nasi goreng")
         recipeNameLabel.text = recipe?.name
         
         

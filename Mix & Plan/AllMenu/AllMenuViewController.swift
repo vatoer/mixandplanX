@@ -18,11 +18,11 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var selected: [Ingredients] = []
     
-    var availMen:[String] = []
+    var availMen:[Menus] = []
     
     @IBOutlet weak var allMenuCollView: UICollectionView!
     
-    var optMenu: [Menus] = [Menus(name: "Fried Rice", image: "", ingredients: ["Chicken", "Rice", "Onion"], instructions: ["", ""]), Menus(name: "Satay", image: "", ingredients: ["Chicken", "Onion", "Peanut"], instructions: ["", ""]), Menus(name: "Chicken Soto Soup", image: "", ingredients: ["Chicken", "Carrot", "Garlic", "Salt"], instructions: ["",""]), Menus(name: "Fried Chicken", image: "", ingredients: ["Chicken", "Egg"], instructions: ["", ""]), Menus(name: "Sunny Side Egg", image: "", ingredients: ["Egg", ""], instructions: ["",""]), Menus(name: "Steak", image: "", ingredients: ["Beef", "Salt", "Pepper", "Butter"], instructions: ["", ""]), Menus(name: "Beef Yakiniku", image: "", ingredients: ["Beef", "Onion", "Pepper"], instructions: ["",""]), Menus(name: "Tamagoyaki", image: "", ingredients: ["Egg", "Soy Sauce"], instructions: ["", ""]), Menus(name: "Stir Fry Pak Choy", image: "", ingredients: ["Bok Choy", "peppr"], instructions: ["", ""]), Menus(name: "Yolk Egg Prawn", image: "", ingredients: ["Prawn", "Egg", "Tapioca Flour", "Oil"], instructions: ["", ""]) ]
+    var optMenu: [Menus] = [Menus(name: "Fried Rice", image: "fried rice", ingredients: ["Chicken", "Rice", "Onion"], instructions: ["", ""]), Menus(name: "Satay", image: "satay", ingredients: ["Chicken", "Onion", "Peanut"], instructions: ["", ""]), Menus(name: "Chicken Soto Soup", image: "soto", ingredients: ["Chicken", "Carrot", "Garlic", "Salt"], instructions: ["",""]), Menus(name: "Fried Chicken", image: "fried chicken", ingredients: ["Chicken", "Egg"], instructions: ["", ""]), Menus(name: "Sunny Side Egg", image: "sunny egg", ingredients: ["Egg", ""], instructions: ["",""]), Menus(name: "Steak", image: "steak", ingredients: ["Beef", "Salt", "Pepper", "Butter"], instructions: ["", ""]), Menus(name: "Beef Yakiniku", image: "beef yakiniku", ingredients: ["Beef", "Onion", "Pepper"], instructions: ["",""]), Menus(name: "Tamagoyaki", image: "tamagoyaki", ingredients: ["Egg", "Soy Sauce"], instructions: ["", ""]), Menus(name: "Stir Fry Pak Choy", image: "sawi", ingredients: ["Bok Choy", "peppr"], instructions: ["", ""]), Menus(name: "Yolk Egg Prawn", image: "udang salted", ingredients: ["Prawn", "Egg", "Tapioca Flour", "Oil"], instructions: ["", ""]) ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,8 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let allMenuCell = collectionView.dequeueReusableCell(withReuseIdentifier: "allMenuCell", for: indexPath) as! AllMenuCollectionViewCell
-        allMenuCell.allMenuLbl.text = availMen[indexPath.row]
+        allMenuCell.allMenuLbl.text = availMen[indexPath.row].name
+        allMenuCell.allMenuImg.image = UIImage(named: availMen[indexPath.row].image)
         return allMenuCell
     }
     
@@ -50,7 +51,7 @@ class AllMenuViewController: UIViewController, UICollectionViewDataSource, UICol
                 for i in 0..<selected.count{
                     print(selected[i].name)
                     if (ing == selected[i].name){
-                        availMen.append(menu.name)
+                        availMen.append(menu)
                     }
                 }
             }

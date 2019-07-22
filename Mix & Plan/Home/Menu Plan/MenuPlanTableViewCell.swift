@@ -14,6 +14,7 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
     //menus nya narik dari coredata recipePlan
     var recipes : [Recipe] = []
     var menus = ["Nasi Goreng Ayam", "Penne Carbonara", "Miso Soup"]
+    let img : [String] = ["fried rice", "satay", "soto", "fried chicken", "sunny egg", "steak", "beef yakiniku", "tamagoyaki", "sawi", "udang salted"]
     
     let mp_vc = MenuPlanViewController()
 
@@ -42,8 +43,20 @@ class MenuPlanTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollec
         let menu_Cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCollectionViewCell
         
         //datanya diambil dari si core datanya
-        menu_Cell.menuImg.image = UIImage(named: "chef")
         menu_Cell.menuLbl.text = recipes[indexPath.row].name
+        
+        if menu_Cell.menuLbl.text == "Fried Rice" { menu_Cell.menuImg.image = UIImage(named: "fried rice")}
+        else if menu_Cell.menuLbl.text == "Satay" { menu_Cell.menuImg.image = UIImage(named: "satay")}
+        else if menu_Cell.menuLbl.text == "Chicken Soto Soup" { menu_Cell.menuImg.image = UIImage(named: "soto")}
+        else if menu_Cell.menuLbl.text == "Steak" { menu_Cell.menuImg.image = UIImage(named: "steak") }
+        else if menu_Cell.menuLbl.text == "Friend Chicken" { menu_Cell.menuImg.image = UIImage(named: "fried chicken") }
+        else if menu_Cell.menuLbl.text == "Sunny Side Egg" { menu_Cell.menuImg.image = UIImage(named: "sunny egg") }
+        else if menu_Cell.menuLbl.text == "Tamagoyaki" { menu_Cell.menuImg.image = UIImage(named: "tamagoyaki") }
+        else if menu_Cell.menuLbl.text == "Beef Yakiniku" { menu_Cell.menuImg.image = UIImage(named: "beef yakiniku") }
+        else if menu_Cell.menuLbl.text == "Stir Fry Pak Choy" { menu_Cell.menuImg.image = UIImage(named: "sawi") }
+        else if menu_Cell.menuLbl.text == "Yolk Egg Prawn" { menu_Cell.menuImg.image = UIImage(named: "udang salted") }
+        
+        
         menu_Cell.deleteBtn.tag = indexPath.row
         //add target kalo button delete (x) nya di klik nanti menu nya hilang
         menu_Cell.deleteBtn.addTarget(self, action: #selector(deleteMenuPlan), for: .touchUpInside)

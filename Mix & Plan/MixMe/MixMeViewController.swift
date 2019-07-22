@@ -14,7 +14,7 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var ingredientsCollView: UICollectionView!
 
     
-    var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "", selected: false),Ingredients(name: "Beef", image: "", selected: false),Ingredients(name: "Fish", image: "", selected: false),Ingredients(name: "Tomato", image: "", selected: false),Ingredients(name: "Egg", image: "", selected: false),Ingredients(name: "Carrot", image: "", selected: false),Ingredients(name: "Broccoli", image: "", selected: false)]
+    var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "chicken", selected: false),Ingredients(name: "Beef", image: "", selected: false),Ingredients(name: "Fish", image: "", selected: false),Ingredients(name: "Tomato", image: "tomato", selected: false),Ingredients(name: "Egg", image: "egg", selected: false),Ingredients(name: "Carrot", image: "", selected: false),Ingredients(name: "Broccoli", image: "broccoli", selected: false), Ingredients(name: "Shrimp", image: "shrimp", selected: false)]
     
     var ingSelected: [Ingredients] = []
     
@@ -44,7 +44,7 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ingredientCell", for: indexPath) as! IngredientsCollectionViewCell
-        ingCell.dispIngredientImg.image = UIImage(named: "satu")
+        ingCell.dispIngredientImg.image = UIImage(named: ingredient[indexPath.row].image)
         ingCell.ingredientLbl.text = ingredient[indexPath.row].name
         
         let ing = ingredient[indexPath.row]

@@ -20,7 +20,6 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Do any additional setup after loading the view.
         MenuCollView.delegate = self
         MenuCollView.dataSource = self
-        
     
     }
     
@@ -32,6 +31,18 @@ class MenuViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let menusCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cuisineMenuCell", for: indexPath) as! CuisineMenuCollectionViewCell
         
                 menusCell.cMenuLbl.text = menus[indexPath.row].name
+        
+        if menusCell.cMenuLbl.text == "Fried Rice" { menusCell.cMenuImg.image = UIImage(named: "fried rice")}
+        else if menusCell.cMenuLbl.text == "Satay" { menusCell.cMenuImg.image = UIImage(named: "satay")}
+        else if menusCell.cMenuLbl.text == "Chicken Soto Soup" { menusCell.cMenuImg.image = UIImage(named: "soto")}
+        else if menusCell.cMenuLbl.text == "Steak" { menusCell.cMenuImg.image = UIImage(named: "steak") }
+        else if menusCell.cMenuLbl.text == "Friend Chicken" { menusCell.cMenuImg.image = UIImage(named: "fried chicken") }
+            else if menusCell.cMenuLbl.text == "Sunny Side Egg" { menusCell.cMenuImg.image = UIImage(named: "sunny egg") }
+        else if menusCell.cMenuLbl.text == "Tamagoyaki" { menusCell.cMenuImg.image = UIImage(named: "tamagoyaki") }
+        else if menusCell.cMenuLbl.text == "Beef Yakiniku" { menusCell.cMenuImg.image = UIImage(named: "beef yakiniku") }
+        else if menusCell.cMenuLbl.text == "Stir Fry Pak Choy" { menusCell.cMenuImg.image = UIImage(named: "sawi") }
+        else if menusCell.cMenuLbl.text == "Yolk Egg Prawn" { menusCell.cMenuImg.image = UIImage(named: "udang salted") }
+        
         
         return menusCell
     }

@@ -12,6 +12,7 @@ class CuisineMenuCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var cMenuLbl: UILabel!
+    @IBOutlet weak var cMenuImg: UIImageView!
     
     override func awakeFromNib() {
         self.contentView.layer.cornerRadius = 5.0
