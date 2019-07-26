@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var cuisine = ["Recomendation", "Indonesia", "Western", "Jepang","Chinese","Thai"]
     //TODO
     //bikin logo
-    var cuisineLogo = ["pasar", "western", "western", "western","western", "western"]
+    var cuisineLogo = ["pasar", "indo", "western", "japanese","chinese", "thai"]
     
     @IBAction func menuPlanBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMenuPlan", sender: self)

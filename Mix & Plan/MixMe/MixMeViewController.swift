@@ -14,7 +14,7 @@ class MixMeViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var ingredientsCollView: UICollectionView!
 
     
-    var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "chicken", selected: false),Ingredients(name: "Beef", image: "", selected: false),Ingredients(name: "Fish", image: "", selected: false),Ingredients(name: "Tomato", image: "tomato", selected: false),Ingredients(name: "Egg", image: "egg", selected: false),Ingredients(name: "Carrot", image: "", selected: false),Ingredients(name: "Broccoli", image: "broccoli", selected: false), Ingredients(name: "Shrimp", image: "shrimp", selected: false)]
+    var ingredient:[Ingredients] = [Ingredients(name: "Chicken", image: "chicken", selected: false),Ingredients(name: "Beef", image: "beefMeat", selected: false),Ingredients(name: "Fish", image: "fish", selected: false),Ingredients(name: "Tomato", image: "tomato", selected: false),Ingredients(name: "Egg", image: "egg", selected: false),Ingredients(name: "Carrot", image: "carrot", selected: false),Ingredients(name: "Broccoli", image: "broccoli", selected: false), Ingredients(name: "Shrimp", image: "shrimp", selected: false)]
     
     var ingSelected: [Ingredients] = []
     
